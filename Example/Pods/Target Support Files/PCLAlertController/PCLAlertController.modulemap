@@ -1,0 +1,6 @@
+framework module PCLAlertController {
+  umbrella header "PCLAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}

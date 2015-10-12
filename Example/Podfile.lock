@@ -1,0 +1,14 @@
+PODS:
+  - PCLAlertController (0.0.1)
+
+DEPENDENCIES:
+  - PCLAlertController (from `..`)
+
+EXTERNAL SOURCES:
+  PCLAlertController:
+    :path: ..
+
+SPEC CHECKSUMS:
+  PCLAlertController: 60f88f43bd647dda884df52cc4f2afb2b26f96f2
+
+COCOAPODS: 0.38.2
