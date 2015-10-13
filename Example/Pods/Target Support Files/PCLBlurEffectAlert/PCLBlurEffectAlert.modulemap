@@ -1,0 +1,6 @@
+framework module PCLBlurEffectAlert {
+  umbrella header "PCLBlurEffectAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}

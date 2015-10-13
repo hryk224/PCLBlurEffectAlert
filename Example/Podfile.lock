@@ -1,14 +1,14 @@
 PODS:
-  - PCLAlertController (0.0.1)
+  - PCLBlurEffectAlert (1.0.0)
 
 DEPENDENCIES:
-  - PCLAlertController (from `..`)
+  - PCLBlurEffectAlert (from `..`)
 
 EXTERNAL SOURCES:
-  PCLAlertController:
+  PCLBlurEffectAlert:
     :path: ..
 
 SPEC CHECKSUMS:
-  PCLAlertController: 60f88f43bd647dda884df52cc4f2afb2b26f96f2
+  PCLBlurEffectAlert: 691b733bb5559a98c6074d7af59b5ea7733ec42f
 
 COCOAPODS: 0.38.2

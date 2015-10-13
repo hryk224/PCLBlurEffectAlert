@@ -7,88 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14B51A7B092C012AC1C41170C1A07A33 /* PCLAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 423078E1584E08D6BB5A090AC048B56F /* PCLAlertController-dummy.m */; };
-		7C52E756A32B25FD81813D6C67200A0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61891446E9D75CC27CB4A720F86BBFD /* Foundation.framework */; };
-		A863B7D22CFE837D3264F12E2B7F165B /* PCLAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D86B8F35760D45A2A7BD08A9780D8028 /* PCLAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BFDEC32E41B5ED3CC2F53348E6884863 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB3C5AEAF33B646F4FC9EE5A17C2C7 /* Pods-dummy.m */; };
-		C43A3989F604FA4D8A032979B2DCDC44 /* PCLAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74601F48CB10F88D1F3DDC60BB8E5C49 /* PCLAlertController.swift */; };
-		E6BFD30E3E74E94C1CD0EB8255715212 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7667F1B3A830B7AB747A4E7A8CF02A56 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED9229641BCBAB8F007DA842 /* PCLAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9229631BCBAB8F007DA842 /* PCLAlertAction.swift */; settings = {ASSET_TAGS = (); }; };
-		ED9229661BCBAC53007DA842 /* PCLNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9229651BCBAC53007DA842 /* PCLNotificationManager.swift */; settings = {ASSET_TAGS = (); }; };
-		ED9229681BCBBF99007DA842 /* PCLAlertTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9229671BCBBF99007DA842 /* PCLAlertTitleView.swift */; settings = {ASSET_TAGS = (); }; };
-		F23EEBE729EFBA928DDF1170C7BF7A0D /* PCLAlertTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF4FB2F4DA164CB10045DF0F9297A2 /* PCLAlertTransitionAnimator.swift */; };
-		F93C7D01E16085F5A83A08A7B8A3E41E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61891446E9D75CC27CB4A720F86BBFD /* Foundation.framework */; };
-		FDF0848ABD2A9150EF71710E9A94402A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9496AA6D2156B32E4B313D925F05C67 /* UIKit.framework */; };
+		054CDA1208F60D4ED3B1FEB2EE2720A6 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 412E9F50D15CF0DE2752D94BBB36BF30 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3323BA66CEF935051F3DEF80AB1DF9DE /* PCLBlurEffectAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B1D3B064026E533CB746E08E8C9 /* PCLBlurEffectAlert-dummy.m */; };
+		74DA4B91197802AFBB7682FFFF3CB5E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */; };
+		751D022E748DBD8E74B9EF555D616E63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */; };
+		85F8B43BD13A6C426685819A9EFE9590 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7346FB289EEB10A7C220456D494FCF0D /* Pods-dummy.m */; };
+		8D759D876E14F7CCE71B911FD6CC7196 /* PCLBlurEffectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD9B1962EB03D07F70522C6BBBAE48D /* PCLBlurEffectAlert.swift */; };
+		B981B6356419BB77DCB409FB8A3C0AE3 /* PCLBlurEffectAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AAE1B869C1A139083EEC340BC529A49 /* PCLBlurEffectAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6E67D464B68EE9C2FB85A20E19ED070 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0F5BA40ABFB3E255C662796AE1BB8 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		10AAD26396D5DA5D98E2C29162F5FAFB /* PBXContainerItemProxy */ = {
+		60ED561D63F176D9C19A9475BA0A0F06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C98621D684141B2DA02393148774A5CF;
-			remoteInfo = PCLAlertController;
+			remoteGlobalIDString = 77F4F8EFA4582FF9B1A8037256F6E306;
+			remoteInfo = PCLBlurEffectAlert;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04FF4FB2F4DA164CB10045DF0F9297A2 /* PCLAlertTransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PCLAlertTransitionAnimator.swift; sourceTree = "<group>"; };
-		423078E1584E08D6BB5A090AC048B56F /* PCLAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PCLAlertController-dummy.m"; sourceTree = "<group>"; };
-		6391DF12186439EA22111CC51872237D /* PCLAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66FCB264F2AA70D26F0840C4B57A4183 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		670EF33AAB3C71A57143131DA7C6B937 /* PCLAlertController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLAlertController-prefix.pch"; sourceTree = "<group>"; };
-		74601F48CB10F88D1F3DDC60BB8E5C49 /* PCLAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PCLAlertController.swift; sourceTree = "<group>"; };
-		7667F1B3A830B7AB747A4E7A8CF02A56 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		017308518B1793658612E4315001A3FA /* PCLBlurEffectAlert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PCLBlurEffectAlert.xcconfig; sourceTree = "<group>"; };
+		1849BA1F729656AF4760B40107964A9F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EC1E98035FB1FA0413FB46AA916D397 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		412E9F50D15CF0DE2752D94BBB36BF30 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PCLBlurEffectAlert-Private.xcconfig"; sourceTree = "<group>"; };
+		6149C2C4979A1A5992E055A2A1AEC282 /* PCLBlurEffectAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-prefix.pch"; sourceTree = "<group>"; };
+		62A217875DD4AA776300CD19DDF5897F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		7346FB289EEB10A7C220456D494FCF0D /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		98F357F5561D18194A14CF211A2423CC /* PCLAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PCLAlertController.modulemap; sourceTree = "<group>"; };
-		A4EB3C5AEAF33B646F4FC9EE5A17C2C7 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		A9496AA6D2156B32E4B313D925F05C67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AFF99E544200EA352FBFA4FE938AE196 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		8AAE1B869C1A139083EEC340BC529A49 /* PCLBlurEffectAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-umbrella.h"; sourceTree = "<group>"; };
+		9C5E7B1D3B064026E533CB746E08E8C9 /* PCLBlurEffectAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PCLBlurEffectAlert-dummy.m"; sourceTree = "<group>"; };
+		AA77244091D82C4A4BF47A461F8B520E /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD0F5BA40ABFB3E255C662796AE1BB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C00D19D94E6C2ED4313096E0EF18F5D7 /* PCLAlertController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PCLAlertController-Private.xcconfig"; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		CD4AFF5E3053996CB9119E0C4A61716B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D86B8F35760D45A2A7BD08A9780D8028 /* PCLAlertController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLAlertController-umbrella.h"; sourceTree = "<group>"; };
-		DDBA4DAE9E314E2A15C83F31CF683571 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE1F501849BF4AA9C1B36BC911AD9BAB /* PCLAlertController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PCLAlertController.xcconfig; sourceTree = "<group>"; };
-		E61891446E9D75CC27CB4A720F86BBFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DDD9B1962EB03D07F70522C6BBBAE48D /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED9229631BCBAB8F007DA842 /* PCLAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCLAlertAction.swift; sourceTree = "<group>"; };
-		ED9229651BCBAC53007DA842 /* PCLNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCLNotificationManager.swift; sourceTree = "<group>"; };
-		ED9229671BCBBF99007DA842 /* PCLAlertTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCLAlertTitleView.swift; sourceTree = "<group>"; };
-		F1C26D69EA0F8032F3B9F89512C7E608 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		F17C1EDE1EFE8D4BA9C84533B9743DCA /* PCLBlurEffectAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PCLBlurEffectAlert.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		021E3472C009710045833D7764B0D4D7 /* Frameworks */ = {
+		B906BE6FBCDF630409C51FAEAE2361E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C52E756A32B25FD81813D6C67200A0B /* Foundation.framework in Frameworks */,
-				FDF0848ABD2A9150EF71710E9A94402A /* UIKit.framework in Frameworks */,
+				751D022E748DBD8E74B9EF555D616E63 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79E9F334B7793C6FE593B5F853F0E168 /* Frameworks */ = {
+		D0A4490C506562B9A9938B9227AE642D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F93C7D01E16085F5A83A08A7B8A3E41E /* Foundation.framework in Frameworks */,
+				74DA4B91197802AFBB7682FFFF3CB5E0 /* Foundation.framework in Frameworks */,
+				F6E67D464B68EE9C2FB85A20E19ED070 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F58DC9758AFE0018E1F21BB99C274C3 /* PCLAlertController */ = {
+		2ED61B5003871788B85E327A0853830D /* PCLBlurEffectAlert */ = {
 			isa = PBXGroup;
 			children = (
-				6F8DB9E2F29547F31557364538C58001 /* Classes */,
-				CB817ABD17E3578955F410542AF71910 /* Support Files */,
+				B097060B0E8DCE77F2D19D5814B51914 /* PCLBlurEffectAlert */,
+				CB95876E1575966521C2E76B34DCE259 /* Support Files */,
 			);
-			name = PCLAlertController;
+			name = PCLBlurEffectAlert;
 			path = ../..;
 			sourceTree = "<group>";
 		};
@@ -100,18 +92,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6F8DB9E2F29547F31557364538C58001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				74601F48CB10F88D1F3DDC60BB8E5C49 /* PCLAlertController.swift */,
-				ED9229631BCBAB8F007DA842 /* PCLAlertAction.swift */,
-				ED9229671BCBBF99007DA842 /* PCLAlertTitleView.swift */,
-				04FF4FB2F4DA164CB10045DF0F9297A2 /* PCLAlertTransitionAnimator.swift */,
-				ED9229651BCBAC53007DA842 /* PCLNotificationManager.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +99,12 @@
 				79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */,
 				D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */,
 				87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */,
-				A4EB3C5AEAF33B646F4FC9EE5A17C2C7 /* Pods-dummy.m */,
+				7346FB289EEB10A7C220456D494FCF0D /* Pods-dummy.m */,
 				E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */,
 				CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */,
-				7667F1B3A830B7AB747A4E7A8CF02A56 /* Pods-umbrella.h */,
-				AFF99E544200EA352FBFA4FE938AE196 /* Pods.debug.xcconfig */,
-				F1C26D69EA0F8032F3B9F89512C7E608 /* Pods.release.xcconfig */,
+				412E9F50D15CF0DE2752D94BBB36BF30 /* Pods-umbrella.h */,
+				62A217875DD4AA776300CD19DDF5897F /* Pods.debug.xcconfig */,
+				CD4AFF5E3053996CB9119E0C4A61716B /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
@@ -134,19 +114,19 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				A3781A7AAE6E93EDAE2E6EE3A8B7D641 /* Development Pods */,
+				F8EC97E8300D4B5D9F7A2AA9CF6EFAD6 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A3781A7AAE6E93EDAE2E6EE3A8B7D641 /* Development Pods */ = {
+		B097060B0E8DCE77F2D19D5814B51914 /* PCLBlurEffectAlert */ = {
 			isa = PBXGroup;
 			children = (
-				2F58DC9758AFE0018E1F21BB99C274C3 /* PCLAlertController */,
+				DDD9B1962EB03D07F70522C6BBBAE48D /* PCLBlurEffectAlert.swift */,
 			);
-			name = "Development Pods";
+			path = PCLBlurEffectAlert;
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -157,26 +137,26 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		CB817ABD17E3578955F410542AF71910 /* Support Files */ = {
+		CB95876E1575966521C2E76B34DCE259 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				66FCB264F2AA70D26F0840C4B57A4183 /* Info.plist */,
-				98F357F5561D18194A14CF211A2423CC /* PCLAlertController.modulemap */,
-				DE1F501849BF4AA9C1B36BC911AD9BAB /* PCLAlertController.xcconfig */,
-				C00D19D94E6C2ED4313096E0EF18F5D7 /* PCLAlertController-Private.xcconfig */,
-				423078E1584E08D6BB5A090AC048B56F /* PCLAlertController-dummy.m */,
-				670EF33AAB3C71A57143131DA7C6B937 /* PCLAlertController-prefix.pch */,
-				D86B8F35760D45A2A7BD08A9780D8028 /* PCLAlertController-umbrella.h */,
+				1EC1E98035FB1FA0413FB46AA916D397 /* Info.plist */,
+				F17C1EDE1EFE8D4BA9C84533B9743DCA /* PCLBlurEffectAlert.modulemap */,
+				017308518B1793658612E4315001A3FA /* PCLBlurEffectAlert.xcconfig */,
+				515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */,
+				9C5E7B1D3B064026E533CB746E08E8C9 /* PCLBlurEffectAlert-dummy.m */,
+				6149C2C4979A1A5992E055A2A1AEC282 /* PCLBlurEffectAlert-prefix.pch */,
+				8AAE1B869C1A139083EEC340BC529A49 /* PCLBlurEffectAlert-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PCLAlertController";
+			path = "Example/Pods/Target Support Files/PCLBlurEffectAlert";
 			sourceTree = "<group>";
 		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6391DF12186439EA22111CC51872237D /* PCLAlertController.framework */,
-				DDBA4DAE9E314E2A15C83F31CF683571 /* Pods.framework */,
+				AA77244091D82C4A4BF47A461F8B520E /* PCLBlurEffectAlert.framework */,
+				1849BA1F729656AF4760B40107964A9F /* Pods.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,67 +164,75 @@
 		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E61891446E9D75CC27CB4A720F86BBFD /* Foundation.framework */,
-				A9496AA6D2156B32E4B313D925F05C67 /* UIKit.framework */,
+				4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */,
+				ACD0F5BA40ABFB3E255C662796AE1BB8 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		F8EC97E8300D4B5D9F7A2AA9CF6EFAD6 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2ED61B5003871788B85E327A0853830D /* PCLBlurEffectAlert */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4189C8F5ECA83436094C00016EF0853A /* Headers */ = {
+		8F3797F95A9861F6A9831D7327502FFA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A863B7D22CFE837D3264F12E2B7F165B /* PCLAlertController-umbrella.h in Headers */,
+				B981B6356419BB77DCB409FB8A3C0AE3 /* PCLBlurEffectAlert-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F221F5CE22188157625C289D71BA11D9 /* Headers */ = {
+		C34465A8854F6BA85E97B936647E0B77 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6BFD30E3E74E94C1CD0EB8255715212 /* Pods-umbrella.h in Headers */,
+				054CDA1208F60D4ED3B1FEB2EE2720A6 /* Pods-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7E3624D961F52F8CBC1C3E603FF2B0F6 /* Pods */ = {
+		77F4F8EFA4582FF9B1A8037256F6E306 /* PCLBlurEffectAlert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 44BD337113458D030EEEBA92D8FD7CDE /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = BDB298C557E69DE5FB09DA7424C52AC9 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */;
 			buildPhases = (
-				59793200AAE0C9E96F4010F3FF80104F /* Sources */,
-				79E9F334B7793C6FE593B5F853F0E168 /* Frameworks */,
-				F221F5CE22188157625C289D71BA11D9 /* Headers */,
+				9B1C195530D517AC9FE6563CF9214CF5 /* Sources */,
+				D0A4490C506562B9A9938B9227AE642D /* Frameworks */,
+				8F3797F95A9861F6A9831D7327502FFA /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				025F6CA87D2ED7B923C69BAC9992EFE9 /* PBXTargetDependency */,
+			);
+			name = PCLBlurEffectAlert;
+			productName = PCLBlurEffectAlert;
+			productReference = AA77244091D82C4A4BF47A461F8B520E /* PCLBlurEffectAlert.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8ABAAB331E799861861BC7CAC485C5DE /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B3E1CC39B96D649690FB77AE14C2C3A /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				59EA31A7504AE6EB2A20590AD92D98A7 /* Sources */,
+				B906BE6FBCDF630409C51FAEAE2361E8 /* Frameworks */,
+				C34465A8854F6BA85E97B936647E0B77 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85B03D91DE2D4A5165A29DDEF77D111B /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = DDBA4DAE9E314E2A15C83F31CF683571 /* Pods.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C98621D684141B2DA02393148774A5CF /* PCLAlertController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9CD60E9223958CDB2146CAF09BF1AAA9 /* Build configuration list for PBXNativeTarget "PCLAlertController" */;
-			buildPhases = (
-				F79F09D09EAFC2C661ECBE32B91E56DA /* Sources */,
-				021E3472C009710045833D7764B0D4D7 /* Frameworks */,
-				4189C8F5ECA83436094C00016EF0853A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PCLAlertController;
-			productName = PCLAlertController;
-			productReference = 6391DF12186439EA22111CC51872237D /* PCLAlertController.framework */;
+			productReference = 1849BA1F729656AF4760B40107964A9F /* Pods.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -268,49 +256,45 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C98621D684141B2DA02393148774A5CF /* PCLAlertController */,
-				7E3624D961F52F8CBC1C3E603FF2B0F6 /* Pods */,
+				77F4F8EFA4582FF9B1A8037256F6E306 /* PCLBlurEffectAlert */,
+				8ABAAB331E799861861BC7CAC485C5DE /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		59793200AAE0C9E96F4010F3FF80104F /* Sources */ = {
+		59EA31A7504AE6EB2A20590AD92D98A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFDEC32E41B5ED3CC2F53348E6884863 /* Pods-dummy.m in Sources */,
+				85F8B43BD13A6C426685819A9EFE9590 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F79F09D09EAFC2C661ECBE32B91E56DA /* Sources */ = {
+		9B1C195530D517AC9FE6563CF9214CF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED9229641BCBAB8F007DA842 /* PCLAlertAction.swift in Sources */,
-				ED9229661BCBAC53007DA842 /* PCLNotificationManager.swift in Sources */,
-				ED9229681BCBBF99007DA842 /* PCLAlertTitleView.swift in Sources */,
-				14B51A7B092C012AC1C41170C1A07A33 /* PCLAlertController-dummy.m in Sources */,
-				C43A3989F604FA4D8A032979B2DCDC44 /* PCLAlertController.swift in Sources */,
-				F23EEBE729EFBA928DDF1170C7BF7A0D /* PCLAlertTransitionAnimator.swift in Sources */,
+				3323BA66CEF935051F3DEF80AB1DF9DE /* PCLBlurEffectAlert-dummy.m in Sources */,
+				8D759D876E14F7CCE71B911FD6CC7196 /* PCLBlurEffectAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		025F6CA87D2ED7B923C69BAC9992EFE9 /* PBXTargetDependency */ = {
+		85B03D91DE2D4A5165A29DDEF77D111B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = PCLAlertController;
-			target = C98621D684141B2DA02393148774A5CF /* PCLAlertController */;
-			targetProxy = 10AAD26396D5DA5D98E2C29162F5FAFB /* PBXContainerItemProxy */;
+			name = PCLBlurEffectAlert;
+			target = 77F4F8EFA4582FF9B1A8037256F6E306 /* PCLBlurEffectAlert */;
+			targetProxy = 60ED561D63F176D9C19A9475BA0A0F06 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1644DDA1641C58F66DBFA9ADA53F2698 /* Release */ = {
+		1B52C8140B3B8F134370825877643966 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1C26D69EA0F8032F3B9F89512C7E608 /* Pods.release.xcconfig */;
+			baseConfigurationReference = CD4AFF5E3053996CB9119E0C4A61716B /* Pods.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -321,7 +305,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -337,34 +321,35 @@
 			};
 			name = Release;
 		};
-		249ADDDB5134C87B9A23FF059D556B4B /* Release */ = {
+		5A48C94A8603489F0ED72D150A07CA92 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C00D19D94E6C2ED4313096E0EF18F5D7 /* PCLAlertController-Private.xcconfig */;
+			baseConfigurationReference = 515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PCLAlertController/PCLAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PCLAlertController/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PCLAlertController/PCLAlertController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PCLAlertController;
+				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PCLBlurEffectAlert;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -396,16 +381,43 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		6829D083CE83CC8AD8F56915C7BFCBEE /* Debug */ = {
+		C9CBFF379D05405FC5710B5B8C7DA5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFF99E544200EA352FBFA4FE938AE196 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PCLBlurEffectAlert;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F49AD05BDE9A62C938EF0BC9D442C1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62A217875DD4AA776300CD19DDF5897F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -416,7 +428,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -433,7 +445,7 @@
 			};
 			name = Debug;
 		};
-		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -460,40 +472,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		87E5F75ED83DFDC2F9CA4424EE27E739 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C00D19D94E6C2ED4313096E0EF18F5D7 /* PCLAlertController-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PCLAlertController/PCLAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PCLAlertController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PCLAlertController/PCLAlertController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PCLAlertController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -501,26 +485,26 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */,
-				74857149DC1E0D599B8A01A78349A926 /* Release */,
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		44BD337113458D030EEEBA92D8FD7CDE /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		9B3E1CC39B96D649690FB77AE14C2C3A /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6829D083CE83CC8AD8F56915C7BFCBEE /* Debug */,
-				1644DDA1641C58F66DBFA9ADA53F2698 /* Release */,
+				F49AD05BDE9A62C938EF0BC9D442C1F3 /* Debug */,
+				1B52C8140B3B8F134370825877643966 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CD60E9223958CDB2146CAF09BF1AAA9 /* Build configuration list for PBXNativeTarget "PCLAlertController" */ = {
+		BDB298C557E69DE5FB09DA7424C52AC9 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87E5F75ED83DFDC2F9CA4424EE27E739 /* Debug */,
-				249ADDDB5134C87B9A23FF059D556B4B /* Release */,
+				5A48C94A8603489F0ED72D150A07CA92 /* Debug */,
+				C9CBFF379D05405FC5710B5B8C7DA5B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

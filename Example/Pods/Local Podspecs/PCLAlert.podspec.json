@@ -1,8 +1,8 @@
 {
-  "name": "PCLAlertController",
+  "name": "PCLAlert",
   "version": "0.0.1",
   "summary": "Custom Swift AlertController.",
-  "homepage": "https://github.com/hryk224/PCLAlertController",
+  "homepage": "https://github.com/hryk224/PCLAlert",
   "screenshots": "",
   "license": {
     "type": "MIT",
@@ -15,18 +15,10 @@
     "ios": "9.0"
   },
   "source": {
-    "git": "https://github.com/hryk224/PCLAlertController.git",
+    "git": "https://github.com/hryk224/PCLAlert.git",
     "tag": "0.0.1"
   },
-  "source_files": [
-    "Classes/*.swift",
-    "Classes/*.xib"
-  ],
-  "resource_bundles": {
-    "PCL": [
-      "Classes/*.xib"
-    ]
-  },
+  "source_files": "Classes/*.{h,swift,xib}",
   "frameworks": "UIKit",
   "requires_arc": true
 }
