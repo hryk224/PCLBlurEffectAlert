@@ -53,6 +53,10 @@ alertController.configure(buttonDisableTextColor: [.Destructive: UIColor.redColo
 presentViewController(alertController, animated: true, completion: nil)
 ```
 
+## Acknowledgements
+
+* Inspired by [DOAlertController](https://github.com/okmr-d/DOAlertController) in [okmr-d](https://github.com/okmr-d).
+
 ##License
 
 This project is made available under the MIT license. See LICENSE file for details.
