@@ -7,53 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029E7DAE71BFE957B87EE3527D9B6A79 /* PCLBlurEffectAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8D007DDB0645DAEA13BFDD5266F97C /* PCLBlurEffectAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		048282DD1853F7FE67DE36C94548EE65 /* PCLBlurEffectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2331DD622DFEE37CDFC4A5DEB04E6B58 /* PCLBlurEffectAlert.swift */; };
 		054CDA1208F60D4ED3B1FEB2EE2720A6 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 412E9F50D15CF0DE2752D94BBB36BF30 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3323BA66CEF935051F3DEF80AB1DF9DE /* PCLBlurEffectAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B1D3B064026E533CB746E08E8C9 /* PCLBlurEffectAlert-dummy.m */; };
-		74DA4B91197802AFBB7682FFFF3CB5E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */; };
-		751D022E748DBD8E74B9EF555D616E63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */; };
+		28777FBDDE299A1C0A49E892621E8C36 /* PCLBlurEffectAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 12A0AF6F7EAC8ED6B90C3E44C22D9EB2 /* PCLBlurEffectAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		751D022E748DBD8E74B9EF555D616E63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B26BC5A4825E0E23EAAD305C992DE6 /* Foundation.framework */; };
 		85F8B43BD13A6C426685819A9EFE9590 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7346FB289EEB10A7C220456D494FCF0D /* Pods-dummy.m */; };
-		8D759D876E14F7CCE71B911FD6CC7196 /* PCLBlurEffectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD9B1962EB03D07F70522C6BBBAE48D /* PCLBlurEffectAlert.swift */; };
-		B981B6356419BB77DCB409FB8A3C0AE3 /* PCLBlurEffectAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AAE1B869C1A139083EEC340BC529A49 /* PCLBlurEffectAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6E67D464B68EE9C2FB85A20E19ED070 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0F5BA40ABFB3E255C662796AE1BB8 /* UIKit.framework */; };
+		97B895B43E8A6FD94309860E9C1622D9 /* PCLBlurEffectAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 110F75F9A3C3F7A58AD19C7D3BC340A2 /* PCLBlurEffectAlert-dummy.m */; };
+		B94A66AEF2812D88F51EFF59013AAC0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B26BC5A4825E0E23EAAD305C992DE6 /* Foundation.framework */; };
+		DBFC89F8A2359AA700A62AEED41C6C80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD36BBB3683F8955A87F60A50D318197 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		60ED561D63F176D9C19A9475BA0A0F06 /* PBXContainerItemProxy */ = {
+		DCD36D26A1605754354662C13B6CD7EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 77F4F8EFA4582FF9B1A8037256F6E306;
+			remoteGlobalIDString = 3EE50D2269BD68AF3A8A414598904775;
 			remoteInfo = PCLBlurEffectAlert;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		017308518B1793658612E4315001A3FA /* PCLBlurEffectAlert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PCLBlurEffectAlert.xcconfig; sourceTree = "<group>"; };
+		04B26BC5A4825E0E23EAAD305C992DE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		110F75F9A3C3F7A58AD19C7D3BC340A2 /* PCLBlurEffectAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PCLBlurEffectAlert-dummy.m"; sourceTree = "<group>"; };
+		12A0AF6F7EAC8ED6B90C3E44C22D9EB2 /* PCLBlurEffectAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PCLBlurEffectAlert.h; sourceTree = "<group>"; };
+		146A8FF6B30A8C3A860716B364C0F562 /* PCLBlurEffectAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-prefix.pch"; sourceTree = "<group>"; };
 		1849BA1F729656AF4760B40107964A9F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EC1E98035FB1FA0413FB46AA916D397 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D0C254AADBEC3571920FE9B3F1AB9D9 /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2331DD622DFEE37CDFC4A5DEB04E6B58 /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
+		3FB951BFF544E2B5C256A59A877AFBF4 /* PCLBlurEffectAlert-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PCLBlurEffectAlert-Private.xcconfig"; sourceTree = "<group>"; };
 		412E9F50D15CF0DE2752D94BBB36BF30 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PCLBlurEffectAlert-Private.xcconfig"; sourceTree = "<group>"; };
-		6149C2C4979A1A5992E055A2A1AEC282 /* PCLBlurEffectAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-prefix.pch"; sourceTree = "<group>"; };
+		5E5B85AE493B221CAC59F01C64246D7E /* PCLBlurEffectAlert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PCLBlurEffectAlert.xcconfig; sourceTree = "<group>"; };
 		62A217875DD4AA776300CD19DDF5897F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		7346FB289EEB10A7C220456D494FCF0D /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		75D7E578D0B3403190F0E30B1817FABB /* PCLBlurEffectAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PCLBlurEffectAlert.modulemap; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		8AAE1B869C1A139083EEC340BC529A49 /* PCLBlurEffectAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-umbrella.h"; sourceTree = "<group>"; };
-		9C5E7B1D3B064026E533CB746E08E8C9 /* PCLBlurEffectAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PCLBlurEffectAlert-dummy.m"; sourceTree = "<group>"; };
-		AA77244091D82C4A4BF47A461F8B520E /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACD0F5BA40ABFB3E255C662796AE1BB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AC8D007DDB0645DAEA13BFDD5266F97C /* PCLBlurEffectAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-umbrella.h"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		CD36BBB3683F8955A87F60A50D318197 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CD4AFF5E3053996CB9119E0C4A61716B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DDD9B1962EB03D07F70522C6BBBAE48D /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F17C1EDE1EFE8D4BA9C84533B9743DCA /* PCLBlurEffectAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PCLBlurEffectAlert.modulemap; sourceTree = "<group>"; };
+		F1455424D9A4CA1FEABA1EA70746AF01 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		62C79CABD608C3E25579E0DD738CE9FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94A66AEF2812D88F51EFF59013AAC0C /* Foundation.framework in Frameworks */,
+				DBFC89F8A2359AA700A62AEED41C6C80 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B906BE6FBCDF630409C51FAEAE2361E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,34 +73,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0A4490C506562B9A9938B9227AE642D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				74DA4B91197802AFBB7682FFFF3CB5E0 /* Foundation.framework in Frameworks */,
-				F6E67D464B68EE9C2FB85A20E19ED070 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2ED61B5003871788B85E327A0853830D /* PCLBlurEffectAlert */ = {
-			isa = PBXGroup;
-			children = (
-				B097060B0E8DCE77F2D19D5814B51914 /* PCLBlurEffectAlert */,
-				CB95876E1575966521C2E76B34DCE259 /* Support Files */,
-			);
-			name = PCLBlurEffectAlert;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D0FB9306D21AF23A056944AE037CBFFF /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DCC48DE54AA796FFBB59F9F14416EA7 /* PCLBlurEffectAlert */ = {
+			isa = PBXGroup;
+			children = (
+				12A0AF6F7EAC8ED6B90C3E44C22D9EB2 /* PCLBlurEffectAlert.h */,
+				2331DD622DFEE37CDFC4A5DEB04E6B58 /* PCLBlurEffectAlert.swift */,
+			);
+			path = PCLBlurEffectAlert;
+			sourceTree = "<group>";
+		};
+		66C2DFEC62C3BF79BCA3013370651A06 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1455424D9A4CA1FEABA1EA70746AF01 /* Info.plist */,
+				75D7E578D0B3403190F0E30B1817FABB /* PCLBlurEffectAlert.modulemap */,
+				5E5B85AE493B221CAC59F01C64246D7E /* PCLBlurEffectAlert.xcconfig */,
+				3FB951BFF544E2B5C256A59A877AFBF4 /* PCLBlurEffectAlert-Private.xcconfig */,
+				110F75F9A3C3F7A58AD19C7D3BC340A2 /* PCLBlurEffectAlert-dummy.m */,
+				146A8FF6B30A8C3A860716B364C0F562 /* PCLBlurEffectAlert-prefix.pch */,
+				AC8D007DDB0645DAEA13BFDD5266F97C /* PCLBlurEffectAlert-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PCLBlurEffectAlert";
 			sourceTree = "<group>";
 		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
@@ -121,14 +137,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		B097060B0E8DCE77F2D19D5814B51914 /* PCLBlurEffectAlert */ = {
-			isa = PBXGroup;
-			children = (
-				DDD9B1962EB03D07F70522C6BBBAE48D /* PCLBlurEffectAlert.swift */,
-			);
-			path = PCLBlurEffectAlert;
-			sourceTree = "<group>";
-		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,25 +145,10 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		CB95876E1575966521C2E76B34DCE259 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1EC1E98035FB1FA0413FB46AA916D397 /* Info.plist */,
-				F17C1EDE1EFE8D4BA9C84533B9743DCA /* PCLBlurEffectAlert.modulemap */,
-				017308518B1793658612E4315001A3FA /* PCLBlurEffectAlert.xcconfig */,
-				515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */,
-				9C5E7B1D3B064026E533CB746E08E8C9 /* PCLBlurEffectAlert-dummy.m */,
-				6149C2C4979A1A5992E055A2A1AEC282 /* PCLBlurEffectAlert-prefix.pch */,
-				8AAE1B869C1A139083EEC340BC529A49 /* PCLBlurEffectAlert-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PCLBlurEffectAlert";
-			sourceTree = "<group>";
-		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA77244091D82C4A4BF47A461F8B520E /* PCLBlurEffectAlert.framework */,
+				1D0C254AADBEC3571920FE9B3F1AB9D9 /* PCLBlurEffectAlert.framework */,
 				1849BA1F729656AF4760B40107964A9F /* Pods.framework */,
 			);
 			name = Products;
@@ -164,16 +157,26 @@
 		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4E8CA12E867613A08E7EE8A79DA10D3F /* Foundation.framework */,
-				ACD0F5BA40ABFB3E255C662796AE1BB8 /* UIKit.framework */,
+				04B26BC5A4825E0E23EAAD305C992DE6 /* Foundation.framework */,
+				CD36BBB3683F8955A87F60A50D318197 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		F6BA74903F58B64E087D5F0837C3153C /* PCLBlurEffectAlert */ = {
+			isa = PBXGroup;
+			children = (
+				4DCC48DE54AA796FFBB59F9F14416EA7 /* PCLBlurEffectAlert */,
+				66C2DFEC62C3BF79BCA3013370651A06 /* Support Files */,
+			);
+			name = PCLBlurEffectAlert;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		F8EC97E8300D4B5D9F7A2AA9CF6EFAD6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2ED61B5003871788B85E327A0853830D /* PCLBlurEffectAlert */,
+				F6BA74903F58B64E087D5F0837C3153C /* PCLBlurEffectAlert */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -181,11 +184,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8F3797F95A9861F6A9831D7327502FFA /* Headers */ = {
+		33CB528801471B96822FF123E3297F5C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B981B6356419BB77DCB409FB8A3C0AE3 /* PCLBlurEffectAlert-umbrella.h in Headers */,
+				029E7DAE71BFE957B87EE3527D9B6A79 /* PCLBlurEffectAlert-umbrella.h in Headers */,
+				28777FBDDE299A1C0A49E892621E8C36 /* PCLBlurEffectAlert.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,13 +204,13 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		77F4F8EFA4582FF9B1A8037256F6E306 /* PCLBlurEffectAlert */ = {
+		3EE50D2269BD68AF3A8A414598904775 /* PCLBlurEffectAlert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDB298C557E69DE5FB09DA7424C52AC9 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */;
+			buildConfigurationList = 6672F0CBA957FF747BF0A306ED0D2D8E /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */;
 			buildPhases = (
-				9B1C195530D517AC9FE6563CF9214CF5 /* Sources */,
-				D0A4490C506562B9A9938B9227AE642D /* Frameworks */,
-				8F3797F95A9861F6A9831D7327502FFA /* Headers */,
+				113D59F33C659FC458D7D21BAF0C2734 /* Sources */,
+				62C79CABD608C3E25579E0DD738CE9FB /* Frameworks */,
+				33CB528801471B96822FF123E3297F5C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -214,7 +218,7 @@
 			);
 			name = PCLBlurEffectAlert;
 			productName = PCLBlurEffectAlert;
-			productReference = AA77244091D82C4A4BF47A461F8B520E /* PCLBlurEffectAlert.framework */;
+			productReference = 1D0C254AADBEC3571920FE9B3F1AB9D9 /* PCLBlurEffectAlert.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8ABAAB331E799861861BC7CAC485C5DE /* Pods */ = {
@@ -228,7 +232,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				85B03D91DE2D4A5165A29DDEF77D111B /* PBXTargetDependency */,
+				4ADD263699F687F326B7109EC028CDF7 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -256,13 +260,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77F4F8EFA4582FF9B1A8037256F6E306 /* PCLBlurEffectAlert */,
+				3EE50D2269BD68AF3A8A414598904775 /* PCLBlurEffectAlert */,
 				8ABAAB331E799861861BC7CAC485C5DE /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		113D59F33C659FC458D7D21BAF0C2734 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97B895B43E8A6FD94309860E9C1622D9 /* PCLBlurEffectAlert-dummy.m in Sources */,
+				048282DD1853F7FE67DE36C94548EE65 /* PCLBlurEffectAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59EA31A7504AE6EB2A20590AD92D98A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,27 +284,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B1C195530D517AC9FE6563CF9214CF5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3323BA66CEF935051F3DEF80AB1DF9DE /* PCLBlurEffectAlert-dummy.m in Sources */,
-				8D759D876E14F7CCE71B911FD6CC7196 /* PCLBlurEffectAlert.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		85B03D91DE2D4A5165A29DDEF77D111B /* PBXTargetDependency */ = {
+		4ADD263699F687F326B7109EC028CDF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PCLBlurEffectAlert;
-			target = 77F4F8EFA4582FF9B1A8037256F6E306 /* PCLBlurEffectAlert */;
-			targetProxy = 60ED561D63F176D9C19A9475BA0A0F06 /* PBXContainerItemProxy */;
+			target = 3EE50D2269BD68AF3A8A414598904775 /* PCLBlurEffectAlert */;
+			targetProxy = DCD36D26A1605754354662C13B6CD7EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1905A5D4294AD81B5119E21E84D0622F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FB951BFF544E2B5C256A59A877AFBF4 /* PCLBlurEffectAlert-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.0.1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PCLBlurEffectAlert;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1B52C8140B3B8F134370825877643966 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD4AFF5E3053996CB9119E0C4A61716B /* Pods.release.xcconfig */;
@@ -321,12 +352,12 @@
 			};
 			name = Release;
 		};
-		5A48C94A8603489F0ED72D150A07CA92 /* Debug */ = {
+		62DB9BB423C06CB0289C84F4DC45C299 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */;
+			baseConfigurationReference = 3FB951BFF544E2B5C256A59A877AFBF4 /* PCLBlurEffectAlert-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
@@ -387,33 +418,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		C9CBFF379D05405FC5710B5B8C7DA5B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 515CA9CDAF15475B81024A524AFA712E /* PCLBlurEffectAlert-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PCLBlurEffectAlert;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		F49AD05BDE9A62C938EF0BC9D442C1F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -491,20 +495,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6672F0CBA957FF747BF0A306ED0D2D8E /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62DB9BB423C06CB0289C84F4DC45C299 /* Debug */,
+				1905A5D4294AD81B5119E21E84D0622F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9B3E1CC39B96D649690FB77AE14C2C3A /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F49AD05BDE9A62C938EF0BC9D442C1F3 /* Debug */,
 				1B52C8140B3B8F134370825877643966 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BDB298C557E69DE5FB09DA7424C52AC9 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5A48C94A8603489F0ED72D150A07CA92 /* Debug */,
-				C9CBFF379D05405FC5710B5B8C7DA5B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
