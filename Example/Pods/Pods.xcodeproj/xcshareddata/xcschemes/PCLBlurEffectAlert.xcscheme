@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4EDEB45F844BF86273E9FB81"
+               BlueprintIdentifier = "76DBE376C41E044225B320DA"
                BuildableName = "PCLBlurEffectAlert.framework"
                BlueprintName = "PCLBlurEffectAlert"
                ReferencedContainer = "container:Pods.xcodeproj">
