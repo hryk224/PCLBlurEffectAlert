@@ -2,7 +2,7 @@
 //  PCLBlurEffectAlert.swift
 //  Pods
 //
-//  Created by hiroyuki yoshida on 2015/10/14.
+//  Created by hryk224 on 2015/10/14.
 //
 //
 
@@ -715,7 +715,7 @@ public class PCLBlurEffectAlert {
                         action.button.frame.size.width -= thin
                     }
                     action.button.addTarget(self,
-                        action: Selector("buttonWasTouchUpInside:"),
+                        action: #selector(Controller.buttonWasTouchUpInside(_:)),
                         forControlEvents: .TouchUpInside)
                     cornerView.addSubview(action.button)
                 }
@@ -737,7 +737,7 @@ public class PCLBlurEffectAlert {
                     action.button.setTitleColor(buttonDisableTextColor[action.style], forState: .Disabled)
                     action.button.titleLabel?.font = buttonFont[action.style]
                     action.button.addTarget(self,
-                        action: Selector("buttonWasTouchUpInside:"),
+                        action: #selector(Controller.buttonWasTouchUpInside(_:)),
                         forControlEvents: .TouchUpInside)
                     cornerView.addSubview(action.button)
                     cornerViewHeight += buttonHeight
@@ -764,7 +764,7 @@ public class PCLBlurEffectAlert {
                         action.button.setTitleColor(buttonDisableTextColor[action.style], forState: .Disabled)
                         action.button.titleLabel?.font = buttonFont[action.style]
                         action.button.addTarget(self,
-                            action: Selector("buttonWasTouchUpInside:"),
+                            action: #selector(Controller.buttonWasTouchUpInside(_:)),
                             forControlEvents: .TouchUpInside)
                         cornerView.addSubview(action.button)
                         cornerViewHeight += buttonHeight
@@ -789,7 +789,7 @@ public class PCLBlurEffectAlert {
                     action.button.setTitleColor(buttonDisableTextColor[action.style], forState: .Disabled)
                     action.button.titleLabel?.font = buttonFont[action.style]
                     action.button.addTarget(self,
-                        action: Selector("buttonWasTouchUpInside:"),
+                        action: #selector(Controller.buttonWasTouchUpInside(_:)),
                         forControlEvents: .TouchUpInside)
                     
                     action.backgroundView.clipsToBounds = true
@@ -836,33 +836,6 @@ public class PCLBlurEffectAlert {
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     // MARK: - TransitionAnimator
     public class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
@@ -1050,7 +1023,7 @@ extension PCLBlurEffectAlert.Controller : PCLAlertKeyboardNotificationObserver, 
 }
 
 // MARK: - keyboard
-protocol PCLAlertKeyboardNotificationObserver: class {
+@objc protocol PCLAlertKeyboardNotificationObserver: class {
     func keyboardWillShow(notification: NSNotification)
     func keyboardWillHide(notification: NSNotification)
 }
@@ -1058,8 +1031,8 @@ protocol PCLAlertKeyboardNotificationObserver: class {
 private extension PCLBlurEffectAlert.NotificationManager {
     
     func addKeyboardNotificationObserver(observer: PCLAlertKeyboardNotificationObserver) {
-        notificationCenter.addObserver(observer, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(observer, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func removeKeyboardNotificationObserver(observer: PCLAlertKeyboardNotificationObserver) {
@@ -1077,7 +1050,7 @@ private extension PCLBlurEffectAlert.NotificationManager {
 }
 
 // MARK: - AlertActionEnabledDidChange
-protocol PCLAlertActionEnabledDidChangeNotificationObserver: class {
+@objc protocol PCLAlertActionEnabledDidChangeNotificationObserver: class {
     func didAlertActionEnabledDidChange(notification: NSNotification)
 }
 
@@ -1086,7 +1059,7 @@ private extension PCLBlurEffectAlert.NotificationManager {
     static let DidAlertActionEnabledDidChangeNotification = "DidAlertActionEnabledDidChangeNotification"
     
     func addAlertActionEnabledDidChangeNotificationObserver(observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
-        notificationCenter.addObserver(observer, selector: "didAlertActionEnabledDidChange:", name: Manager.DidAlertActionEnabledDidChangeNotification , object: nil)
+        notificationCenter.addObserver(observer, selector: #selector(PCLAlertActionEnabledDidChangeNotificationObserver.didAlertActionEnabledDidChange(_:)), name: Manager.DidAlertActionEnabledDidChangeNotification , object: nil)
     }
     
     func removeAlertActionEnabledDidChangeNotificationObserver(observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
