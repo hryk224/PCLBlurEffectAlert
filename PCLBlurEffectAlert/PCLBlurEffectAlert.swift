@@ -101,7 +101,7 @@ public class PCLBlurEffectAlert {
         
         // UI
         public var cornerRadius: CGFloat = 0
-        public var thin: CGFloat = 0.5
+        public var thin: CGFloat = 0.5 * (2 / UIScreen.mainScreen().scale)
         
         // OverlayView
         private var overlayView = UIView()
