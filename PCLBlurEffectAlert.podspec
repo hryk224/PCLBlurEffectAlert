@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PCLBlurEffectAlert"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Custom Swift AlertController."
   s.homepage     = "https://github.com/hryk224/PCLBlurEffectAlert"
   s.screenshots  = "https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample1.gif"
