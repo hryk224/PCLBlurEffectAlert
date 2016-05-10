@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED4405311BCE65DA000B4820 /* PCLBlurEffectAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = ED4405301BCE65DA000B4820 /* PCLBlurEffectAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		935BD7BB1CE274A500E5FDF7 /* PCLBlurEffectAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 935BD7BA1CE274A500E5FDF7 /* PCLBlurEffectAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		935BD7C11CE274C600E5FDF7 /* PCLBlurEffectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935BD7C01CE274C600E5FDF7 /* PCLBlurEffectAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ED4405211BCE655C000B4820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED4405271BCE6598000B4820 /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
-		ED44052E1BCE65DA000B4820 /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED4405301BCE65DA000B4820 /* PCLBlurEffectAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCLBlurEffectAlert.h; sourceTree = "<group>"; };
+		935BD7B81CE274A500E5FDF7 /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		935BD7BA1CE274A500E5FDF7 /* PCLBlurEffectAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCLBlurEffectAlert.h; sourceTree = "<group>"; };
+		935BD7BC1CE274A500E5FDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		935BD7C01CE274C600E5FDF7 /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ED44052A1BCE65DA000B4820 /* Frameworks */ = {
+		935BD7B41CE274A500E5FDF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -28,28 +29,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ED4405091BCE655C000B4820 = {
+		935BD7951CE2748500E5FDF7 = {
 			isa = PBXGroup;
 			children = (
-				ED4405141BCE655C000B4820 /* PCLBlurEffectAlert */,
-				ED4405131BCE655C000B4820 /* Products */,
+				935BD7B91CE274A500E5FDF7 /* PCLBlurEffectAlert */,
+				935BD79F1CE2748500E5FDF7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		ED4405131BCE655C000B4820 /* Products */ = {
+		935BD79F1CE2748500E5FDF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ED44052E1BCE65DA000B4820 /* PCLBlurEffectAlert.framework */,
+				935BD7B81CE274A500E5FDF7 /* PCLBlurEffectAlert.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ED4405141BCE655C000B4820 /* PCLBlurEffectAlert */ = {
+		935BD7B91CE274A500E5FDF7 /* PCLBlurEffectAlert */ = {
 			isa = PBXGroup;
 			children = (
-				ED4405271BCE6598000B4820 /* PCLBlurEffectAlert.swift */,
-				ED4405301BCE65DA000B4820 /* PCLBlurEffectAlert.h */,
-				ED4405211BCE655C000B4820 /* Info.plist */,
+				935BD7BA1CE274A500E5FDF7 /* PCLBlurEffectAlert.h */,
+				935BD7C01CE274C600E5FDF7 /* PCLBlurEffectAlert.swift */,
+				935BD7BC1CE274A500E5FDF7 /* Info.plist */,
 			);
 			path = PCLBlurEffectAlert;
 			sourceTree = "<group>";
@@ -57,25 +58,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		ED44052B1BCE65DA000B4820 /* Headers */ = {
+		935BD7B51CE274A500E5FDF7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED4405311BCE65DA000B4820 /* PCLBlurEffectAlert.h in Headers */,
+				935BD7BB1CE274A500E5FDF7 /* PCLBlurEffectAlert.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		ED44052D1BCE65DA000B4820 /* PCLBlurEffectAlert */ = {
+		935BD7B71CE274A500E5FDF7 /* PCLBlurEffectAlert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ED4405331BCE65DA000B4820 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */;
+			buildConfigurationList = 935BD7BD1CE274A500E5FDF7 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */;
 			buildPhases = (
-				ED4405291BCE65DA000B4820 /* Sources */,
-				ED44052A1BCE65DA000B4820 /* Frameworks */,
-				ED44052B1BCE65DA000B4820 /* Headers */,
-				ED44052C1BCE65DA000B4820 /* Resources */,
+				935BD7B31CE274A500E5FDF7 /* Sources */,
+				935BD7B41CE274A500E5FDF7 /* Frameworks */,
+				935BD7B51CE274A500E5FDF7 /* Headers */,
+				935BD7B61CE274A500E5FDF7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -83,25 +84,25 @@
 			);
 			name = PCLBlurEffectAlert;
 			productName = PCLBlurEffectAlert;
-			productReference = ED44052E1BCE65DA000B4820 /* PCLBlurEffectAlert.framework */;
+			productReference = 935BD7B81CE274A500E5FDF7 /* PCLBlurEffectAlert.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		ED44050A1BCE655C000B4820 /* Project object */ = {
+		935BD7961CE2748500E5FDF7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "yoshida hiroyuki";
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "hiroyuki yoshida";
 				TargetAttributes = {
-					ED44052D1BCE65DA000B4820 = {
-						CreatedOnToolsVersion = 7.0.1;
+					935BD7B71CE274A500E5FDF7 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = ED44050D1BCE655C000B4820 /* Build configuration list for PBXProject "PCLBlurEffectAlert" */;
+			buildConfigurationList = 935BD7991CE2748500E5FDF7 /* Build configuration list for PBXProject "PCLBlurEffectAlert" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -109,18 +110,18 @@
 				en,
 				Base,
 			);
-			mainGroup = ED4405091BCE655C000B4820;
-			productRefGroup = ED4405131BCE655C000B4820 /* Products */;
+			mainGroup = 935BD7951CE2748500E5FDF7;
+			productRefGroup = 935BD79F1CE2748500E5FDF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ED44052D1BCE65DA000B4820 /* PCLBlurEffectAlert */,
+				935BD7B71CE274A500E5FDF7 /* PCLBlurEffectAlert */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ED44052C1BCE65DA000B4820 /* Resources */ = {
+		935BD7B61CE274A500E5FDF7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,20 +131,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ED4405291BCE65DA000B4820 /* Sources */ = {
+		935BD7B31CE274A500E5FDF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935BD7C11CE274C600E5FDF7 /* PCLBlurEffectAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		ED4405221BCE655C000B4820 /* Debug */ = {
+		935BD7AE1CE2748500E5FDF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -176,19 +179,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		ED4405231BCE655C000B4820 /* Release */ = {
+		935BD7AF1CE2748500E5FDF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -215,17 +218,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		ED4405341BCE65DA000B4820 /* Debug */ = {
+		935BD7BE1CE274A500E5FDF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -237,14 +240,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.hryk224.PCLBlurEffectAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		ED4405351BCE65DA000B4820 /* Release */ = {
+		935BD7BF1CE274A500E5FDF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -256,6 +262,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.hryk224.PCLBlurEffectAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -264,25 +271,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ED44050D1BCE655C000B4820 /* Build configuration list for PBXProject "PCLBlurEffectAlert" */ = {
+		935BD7991CE2748500E5FDF7 /* Build configuration list for PBXProject "PCLBlurEffectAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED4405221BCE655C000B4820 /* Debug */,
-				ED4405231BCE655C000B4820 /* Release */,
+				935BD7AE1CE2748500E5FDF7 /* Debug */,
+				935BD7AF1CE2748500E5FDF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ED4405331BCE65DA000B4820 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */ = {
+		935BD7BD1CE274A500E5FDF7 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED4405341BCE65DA000B4820 /* Debug */,
-				ED4405351BCE65DA000B4820 /* Release */,
+				935BD7BE1CE274A500E5FDF7 /* Debug */,
+				935BD7BF1CE274A500E5FDF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = ED44050A1BCE655C000B4820 /* Project object */;
+	rootObject = 935BD7961CE2748500E5FDF7 /* Project object */;
 }

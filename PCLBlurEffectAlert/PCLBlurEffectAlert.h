@@ -2,8 +2,8 @@
 //  PCLBlurEffectAlert.h
 //  PCLBlurEffectAlert
 //
-//  Created by yoshida hiroyuki on 2015/10/14.
-//  Copyright © 2015年 yoshida hiroyuki. All rights reserved.
+//  Created by hiroyuki yoshida on 2016/05/11.
+//  Copyright © 2016年 hiroyuki yoshida. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
