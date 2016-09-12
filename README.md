@@ -3,14 +3,13 @@
 Swift AlertController, use UIVisualeffectview
 
 [![Cocoapods Compatible](http://img.shields.io/cocoapods/v/PCLBlurEffectAlert.svg?style=flat)](http://cocoadocs.org/docsets/PCLBlurEffectAlert)
-[![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
-
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 <img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample1.gif" width="320" > <img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample2.gif" width="320" >
 
 ## Requirements
 - iOS 8.0+
-- Swift 2.2+
+- Swift 3.0+
 - ARC
 
 ## Feature
@@ -30,10 +29,6 @@ use_frameworks!
 pod "PCLBlurEffectAlert"
 ```
 
-<!--#### Carthage-->
-
-Add the following to your `Cartfile` and running `Cartfile update`:
-
 ```Ruby
 github "hryk224/PCLBlurEffectAlert"
 ```
@@ -47,14 +42,14 @@ import PCLBlurEffectAlert
 ## Usage
 
 ```Swift
-let alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title", message: nil, style: .Alert)
-let action1 = PCLBlurEffectAlert.AlertAction(title: "yes", style: .Destructive, handler: { action in  print("yes") })
+let alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title", message: nil, style: .alert)
+let action1 = PCLBlurEffectAlert.AlertAction(title: "yes", style: .destructive, handler: { _ in  print("yes") })
 alertController.addAction(action)
 
 // customize
 alertController.configure(cornerRadius: 20)
-alertController.configure(buttonDisableTextColor: [.Destructive: UIColor.redColor()])
-presentViewController(alertController, animated: true, completion: nil)
+alertController.configure(buttonDisableTextColor: [.destructive: .red])
+alertController.show()
 ```
 
 ## Acknowledgements
