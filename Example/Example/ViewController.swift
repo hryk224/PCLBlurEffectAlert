@@ -10,23 +10,23 @@ import UIKit
 import PCLBlurEffectAlert
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var tableView: UITableView! {
         didSet {
             // tableView
             tableView.estimatedRowHeight = 60
             tableView.rowHeight = 60
-            tableView.layoutMargins = UIEdgeInsetsZero
-            tableView.separatorInset = UIEdgeInsetsZero
+            tableView.layoutMargins = UIEdgeInsets.zero
+            tableView.separatorInset = UIEdgeInsets.zero
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
             tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
             tableView.scrollIndicatorInsets.top = 64
             tableView.contentInset.top = 64
         }
     }
-
+    
     var samples = ["sample1", "sample2", "sample3", "sample4", "sample5"]
     
     override func viewDidLoad() {
@@ -40,301 +40,232 @@ class ViewController: UIViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return samples.count
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Alert"
         }
         return "ActionSheet"
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         cell.textLabel?.text = samples[indexPath.row]
-        cell.selectionStyle = .None
-        cell.backgroundColor = UIColor.clearColor()
-        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.selectionStyle = .none
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var alertController: PCLBlurEffectAlert.Controller?
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: nil,
-                    style: .Alert)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "yes",
-                    style: .Destructive,
-                    handler: { action in
-                        print("yes")
-                })
+                                                                message: nil,
+                                                                style: .alert)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "yes", style: .destructive) { action in
+                    print("yes")
+                }
                 alertController?.addAction(action1)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel",
-                    style: .Cancel,
-                    handler: nil)
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel", style: .cancel, handler: nil)
                 alertController?.addAction(cancelAction)
             } else if indexPath.row == 1 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message",
-                    style: .AlertVertical)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                                                                message: "message message message message message",
+                                                                style: .alertVertical)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.2")
-                })
-                alertController?.configure(alertViewWidth: UIScreen.mainScreen().bounds.width - 100)
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3", style: .destructive) { action in
+                    print("No.2")
+                }
+                alertController?.configure(alertViewWidth: UIScreen.main.bounds.width - 100)
                 alertController?.configure(backgroundColor: UIColor(red: 255, green: 100, blue: 255, alpha: 1))
                 alertController?.configure(overlayBackgroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.5))
                 alertController?.addAction(cancelAction)
                 alertController?.configure(cornerRadius: 20)
                 alertController?.margin = 20
             } else if indexPath.row == 2 {
-                alertController = PCLBlurEffectAlert.Controller(title: nil,
-                    message: nil,
-                    style: .Alert)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                alertController = PCLBlurEffectAlert.Controller(title: nil, message: nil, style: .alert)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.2")
-                })
+                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2", style: .destructive) { action in
+                    print("No.2")
+                }
                 alertController?.addAction(action2)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel",
-                    style: .Cancel,
-                    handler: { action in
-                        print("No.3")
-                })
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel", style: .cancel) { action in
+                    print("No.3")
+                }
                 alertController?.configure(cornerRadius: 0)
                 alertController?.configure(overlayBackgroundColor: UIColor(red: 255, green: 0, blue: 255, alpha: 0.3))
-                alertController?.configure(buttonFont: [.Cancel: UIFont.systemFontOfSize(30)],
-                    buttonTextColor: [.Cancel: UIColor.redColor()],
-                    buttonDisableTextColor: [.Cancel: UIColor.redColor()])
+                alertController?.configure(buttonFont: [.cancel: UIFont.systemFont(ofSize: 30)],
+                                           buttonTextColor: [.cancel: UIColor.red],
+                                           buttonDisableTextColor: [.cancel: UIColor.red])
                 alertController?.addAction(cancelAction)
             } else if indexPath.row == 3 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message",
-                    style: .AlertVertical)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                                                                message: "message message message message message",
+                                                                style: .alertVertical)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2",
-                    style: .Default,
-                    handler: { action in
-                        print("No.2")
-                })
+                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2", style: .default) { action in
+                    print("No.2")
+                }
                 alertController?.addAction(action2)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.3")
-                })
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3", style: .destructive) { action in
+                    print("No.3")
+                }
                 cancelAction.enabled = false
-                alertController?.configure(backgroundColor: UIColor.whiteColor())
+                alertController?.configure(backgroundColor: UIColor.white)
                 alertController?.addTextFieldWithConfigurationHandler()
                 alertController?.addTextFieldWithConfigurationHandler()
                 alertController?.addAction(cancelAction)
-                alertController?.configure(titleFont: UIFont.systemFontOfSize(14), textColor: UIColor.redColor())
-                alertController?.configure(messageFont: UIFont.boldSystemFontOfSize(24), textColor: UIColor.blueColor())
-                alertController?.configure(buttonDisableTextColor: [.Destructive: UIColor.redColor()])
+                
+                alertController?.configure(titleFont: UIFont.systemFont(ofSize: 14), textColor: UIColor.red)
+                alertController?.configure(messageFont: UIFont.boldSystemFont(ofSize: 24), textColor: UIColor.blue)
+                alertController?.configure(buttonDisableTextColor: [.destructive: UIColor.red])
             } else if indexPath.row == 4 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message",
-                    effect: UIBlurEffect(style: .Dark),
-                    style: .AlertVertical)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                                                                message: "message message message message message",
+                                                                effect: UIBlurEffect(style: .dark),
+                                                                style: .alertVertical)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2",
-                    style: .Default,
-                    handler: { action in
-                        print("No.2")
-                })
+                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2", style: .default) { action in
+                    print("No.2")
+                }
                 alertController?.addAction(action2)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.3")
-                })
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3", style: .destructive) { action in
+                    print("No.3")
+                }
                 alertController?.configure(overlayBackgroundColor: UIColor(red: 0, green: 255, blue: 255, alpha: 0.3))
-                alertController?.configure(backgroundColor: UIColor.clearColor())
+                alertController?.configure(backgroundColor: UIColor.clear)
                 alertController?.addAction(cancelAction)
             } else {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message message message message message message",
-                    style: .Alert)
-                let yesAction = PCLBlurEffectAlert.AlertAction(title: "OK",
-                    style: .Destructive,
-                    handler: { action in
-                        print("OK")
-                })
+                                                                message: "message message message message message message message message message message",
+                                                                style: .alert)
+                let yesAction = PCLBlurEffectAlert.AlertAction(title: "OK", style: .destructive) { action in
+                    print("OK")
+                }
                 alertController?.addAction(yesAction)
             }
         } else {
             if indexPath.row == 0 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: nil,
-                    style: .ActionSheet)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "yes",
-                    style: .Destructive,
-                    handler: { action in
-                        print("yes")
-                })
+                                                                message: nil,
+                                                                style: .actionSheet)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "yes", style: .destructive) { action in
+                    print("yes")
+                }
                 alertController?.addAction(action1)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel",
-                    style: .Cancel,
-                    handler: nil)
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel", style: .cancel, handler: nil)
                 alertController?.addAction(cancelAction)
             } else if indexPath.row == 1 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message",
-                    style: .ActionSheet)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                                                                message: "message message message message message",
+                                                                style: .actionSheet)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.2")
-                })
-                alertController?.configure(alertViewWidth: UIScreen.mainScreen().bounds.width - 100)
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3", style: .destructive) { action in
+                    print("No.2")
+                }
+                alertController?.configure(alertViewWidth: UIScreen.main.bounds.width - 100)
                 alertController?.configure(backgroundColor: UIColor(red: 255, green: 100, blue: 255, alpha: 1))
                 alertController?.addAction(cancelAction)
                 alertController?.configure(cornerRadius: 20)
             } else if indexPath.row == 2 {
-                alertController = PCLBlurEffectAlert.Controller(title: nil, message: nil, style: .ActionSheet)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                alertController = PCLBlurEffectAlert.Controller(title: nil, message: nil, style: .actionSheet)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.2")
-                })
+                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2", style: .destructive) { action in
+                    print("No.2")
+                }
                 alertController?.addAction(action2)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel",
-                    style: .Cancel,
-                    handler: { action in
-                        print("No.3")
-                })
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel", style: .cancel) { action in
+                    print("No.3")
+                }
                 alertController?.configure(cornerRadius: 0)
-                alertController?.configure(buttonFont: [.Cancel: UIFont.systemFontOfSize(30)],
-                    buttonTextColor: [.Cancel: UIColor.redColor()],
-                    buttonDisableTextColor: [.Cancel: UIColor.redColor()])
+                alertController?.configure(buttonFont: [.cancel: UIFont.systemFont(ofSize: 30)],
+                                           buttonTextColor: [.cancel: UIColor.red],
+                                           buttonDisableTextColor: [.cancel: UIColor.red])
                 alertController?.addAction(cancelAction)
                 alertController?.configure(buttonHeight: 80)
             } else if indexPath.row == 3 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message",
-                    style: .ActionSheet)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                                                                message: "message message message message message",
+                                                                style: .actionSheet)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.2")
-                })
+                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2", style: .destructive) { action in
+                    print("No.2")
+                }
                 alertController?.addAction(action2)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel",
-                    style: .Cancel,
-                    handler: { action in
-                        print("No.3")
-                })
-                alertController?.configure(backgroundColor: UIColor.whiteColor())
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "cancel", style: .cancel) { action in
+                    print("No.3")
+                }
+                alertController?.configure(backgroundColor: UIColor.white)
                 alertController?.addAction(cancelAction)
-                alertController?.configure(titleFont: UIFont.systemFontOfSize(14), textColor: UIColor.redColor())
-                alertController?.configure(messageFont: UIFont.boldSystemFontOfSize(24), textColor: UIColor.blueColor())
+                alertController?.configure(titleFont: UIFont.systemFont(ofSize: 14), textColor: UIColor.red)
+                alertController?.configure(messageFont: UIFont.boldSystemFont(ofSize: 24), textColor: UIColor.blue)
             } else if indexPath.row == 4 {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message",
-                    effect: UIBlurEffect(style: .Dark),
-                    style: .ActionSheet)
-                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1",
-                    style: .Default,
-                    handler: { action in
-                        print("No.1")
-                })
+                                                                message: "message message message message message",
+                                                                effect: UIBlurEffect(style: .dark),
+                                                                style: .actionSheet)
+                let action1 = PCLBlurEffectAlert.AlertAction(title: "No.1", style: .default) { action in
+                    print("No.1")
+                }
                 alertController?.addAction(action1)
-                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2",
-                    style: .Default,
-                    handler: { action in
-                        print("No.2")
-                })
+                let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2", style: .default) { action in
+                    print("No.2")
+                }
                 alertController?.addAction(action2)
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3",
-                    style: .Destructive,
-                    handler: { action in
-                        print("No.3")
-                })
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3", style: .destructive) { action in
+                    print("No.3")
+                }
                 alertController?.configure(overlayBackgroundColor: UIColor(red: 255, green: 255, blue: 0, alpha: 0.3))
-                alertController?.configure(backgroundColor: UIColor.clearColor())
+                alertController?.configure(backgroundColor: UIColor.clear)
                 alertController?.addAction(cancelAction)
             } else {
                 alertController = PCLBlurEffectAlert.Controller(title: "title title title title title title title",
-                    message: "message message message message message message message message message message",
-                    style: .ActionSheet)
-                let yesAction = PCLBlurEffectAlert.AlertAction(title: "OK",
-                    style: .Destructive,
-                    handler: { action in
-                        print("OK")
-                })
+                                                                message: "message message message message message message message message message message",
+                                                                style: .actionSheet)
+                let yesAction = PCLBlurEffectAlert.AlertAction(title: "OK", style: .destructive) { action in
+                    print("OK")
+                }
                 alertController?.configure(overlayBackgroundColor: UIColor(white: 1, alpha: 0.3))
-                alertController?.configure(backgroundColor: UIColor.whiteColor())
+                alertController?.configure(backgroundColor: UIColor.white)
                 alertController?.addAction(yesAction)
             }
         }
         
         if let alertController = alertController {
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,162 +8,160 @@
 
 import UIKit
 
-public class PCLBlurEffectAlert {
+open class PCLBlurEffectAlert {
     
-    private typealias Alert = PCLBlurEffectAlert
+    fileprivate typealias Alert = PCLBlurEffectAlert
     
     public enum ActionStyle : Int {
-        case Default = 0, Cancel, Destructive
+        case `default` = 0, cancel, destructive
     }
     
-    public class AlertAction {
-        
+    open class AlertAction {
         var tag: Int = -1
         var title: String?
         var style: Alert.ActionStyle
-        var handler: ((Alert.AlertAction!) -> Void)?
-        public var enabled: Bool = true {
+        var handler: ((Alert.AlertAction?) -> Void)?
+        open var enabled: Bool = true {
             didSet {
                 if (oldValue != enabled) {
                     Alert.NotificationManager.sharedInstance.postAlertActionEnabledDidChangeNotification()
                 }
             }
         }
-        
         var button: UIButton!
         var visualEffectView: UIVisualEffectView?
-        var backgroundView = UIView()
-        
+        lazy var backgroundView = UIView()
         public init(title: String,
-            style: Alert.ActionStyle,
-            handler: ((Alert.AlertAction!) -> Void)?) {
-                self.title = title
-                self.style = style
-                self.handler = handler
-                self.button = UIButton(type: .Custom)
-                self.button.tag = tag
-                self.button.adjustsImageWhenHighlighted = false
-                self.button.adjustsImageWhenDisabled = false
-                self.button.layer.masksToBounds = true
-                self.button.setTitle(title, forState: .Normal)
-                self.button.titleLabel?.numberOfLines = 1
-                self.button.titleLabel?.lineBreakMode = .ByTruncatingTail
-                self.button.titleLabel?.textAlignment = .Center
+                    style: Alert.ActionStyle,
+                    handler: ((Alert.AlertAction?) -> Void)?) {
+            self.title = title
+            self.style = style
+            self.handler = handler
+            let button = UIButton(type: .custom)
+            button.tag = tag
+            button.adjustsImageWhenHighlighted = false
+            button.adjustsImageWhenDisabled = false
+            button.layer.masksToBounds = true
+            button.setTitle(title, for: .normal)
+            button.titleLabel?.numberOfLines = 1
+            button.titleLabel?.lineBreakMode = .byTruncatingTail
+            button.titleLabel?.textAlignment = .center
+            self.button = button
         }
         
     }
     
     public enum ControllerStyle : Int {
-        case ActionSheet = 0, Alert, AlertVertical
+        case actionSheet = 0, alert, alertVertical
     }
-
-    public class Controller: UIViewController, PCLRespondsViewDelegate {
+    
+    open class Controller: UIViewController, PCLRespondsViewDelegate {
         
-        private typealias Controller = Alert.Controller
+        fileprivate typealias Controller = Alert.Controller
         
-        private var isNeedlayout = true
+        fileprivate var isNeedlayout = true
         
-        private var message: String?
-        private var textField: UITextField?
-        private var style: Alert.ControllerStyle = .ActionSheet
-        private var effect: UIBlurEffect = UIBlurEffect(style: .ExtraLight)
+        fileprivate var message: String?
+        fileprivate var textField: UITextField?
+        fileprivate var style: Alert.ControllerStyle = .actionSheet
+        fileprivate var effect: UIBlurEffect = UIBlurEffect(style: .extraLight)
         
         // actions
-        private var actions = [AlertAction]()
-        private var cancelAction: AlertAction?
-        private var cancelActionTag: Int?
-        private var keyboardHeight: CGFloat = 0
+        fileprivate var actions: [AlertAction] = []
+        fileprivate var cancelAction: AlertAction?
+        fileprivate var cancelActionTag: Int?
+        fileprivate var keyboardHeight: CGFloat = 0
         
         // textFields
-        private(set) var textFields: [UITextField] = [UITextField]()
+        fileprivate(set) var textFields: [UITextField] = [UITextField]()
         
         var isActionSheet: Bool {
-            return style == .ActionSheet
+            return style == .actionSheet
         }
         var isAlert: Bool {
-            return style == .Alert
+            return style == .alert
         }
         var isAlertVertical: Bool {
-            return style == .AlertVertical
+            return style == .alertVertical
         }
         
-        private var hasTitle: Bool {
+        fileprivate var hasTitle: Bool {
             return title?.isEmpty == false
         }
         
-        private var hasMessage: Bool {
+        fileprivate var hasMessage: Bool {
             return message?.isEmpty == false
         }
         
-        private var hasTextField: Bool {
+        fileprivate var hasTextField: Bool {
             return !textFields.isEmpty
         }
         
         // UI
-        public var cornerRadius: CGFloat = 0
-        public var thin: CGFloat = 1 / UIScreen.mainScreen().scale
+        open var cornerRadius: CGFloat = 0
+        open var thin: CGFloat = 1 / UIScreen.main.scale
         
         // OverlayView
-        private var overlayView = UIView()
-        private var tapGestureRecognizer = UITapGestureRecognizer()
+        fileprivate let overlayView = UIView()
+        fileprivate let tapGestureRecognizer = UITapGestureRecognizer()
         
         // ContainerView
-        private var containerView = RespondsView()
-        private var containerViewBottomLayoutConstraint: NSLayoutConstraint!
+        fileprivate let containerView = RespondsView()
+        fileprivate var containerViewBottomLayoutConstraint: NSLayoutConstraint!
         
         // AlertView
-        private var alertView = UIView()
-        private var alertViewWidth: CGFloat = 0
-        private var alertViewWidthConstraint: NSLayoutConstraint!
-        private var alertViewHeightConstraint: NSLayoutConstraint!
+        fileprivate let alertView = UIView()
+        fileprivate var alertViewWidth: CGFloat = 0
+        fileprivate var alertViewWidthConstraint: NSLayoutConstraint!
+        fileprivate var alertViewHeightConstraint: NSLayoutConstraint!
         
         // CornerView
-        private var cornerView = UIView()
-        private var cornerViewHeightConstraint: NSLayoutConstraint!
+        fileprivate let cornerView = UIView()
+        fileprivate var cornerViewHeightConstraint: NSLayoutConstraint!
         
         // textAreaView
-        private var textAreaView = UIView()
-        private var textAreaHeight: CGFloat = 0
-        private var textAreaViewHeightConstraint: NSLayoutConstraint!
-        private var textAreaVisualEffectView: UIVisualEffectView!
-        private var textAreaVisualEffectViewHeightConstraint: NSLayoutConstraint!
-        private var textAreaBackgroundView = UIView()
-        private var textAreaBackgroundViewHeightConstraint: NSLayoutConstraint!
+        fileprivate let textAreaView = UIView()
+        fileprivate var textAreaHeight: CGFloat = 0
+        fileprivate var textAreaViewHeightConstraint: NSLayoutConstraint!
+        fileprivate var textAreaVisualEffectView: UIVisualEffectView!
+        fileprivate var textAreaVisualEffectViewHeightConstraint: NSLayoutConstraint!
+        fileprivate let textAreaBackgroundView = UIView()
+        fileprivate var textAreaBackgroundViewHeightConstraint: NSLayoutConstraint!
         
         // titleLabel
-        private var titleLabel = UILabel()
+        fileprivate let titleLabel = UILabel()
         
         // messageLabel
-        private var messageLabel = UILabel()
+        fileprivate let messageLabel = UILabel()
         
         // public
-        public var margin: CGFloat = 8
-        public var overlayBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
-        public var backgroundColor = UIColor(white: 1, alpha: 0.05)
-        public var titleFont = UIFont.boldSystemFontOfSize(16)
-        public var titleColor = UIColor.brownColor()
-        public var messageFont = UIFont.systemFontOfSize(14)
-        public var messageColor = UIColor.blackColor()
-        public var buttonFont: [Alert.ActionStyle : UIFont!] = [
-            .Default : UIFont.systemFontOfSize(16),
-            .Cancel  : UIFont.systemFontOfSize(16),
-            .Destructive  : UIFont.systemFontOfSize(16)
+        open var margin: CGFloat = 8
+        open var overlayBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        open var backgroundColor = UIColor(white: 1, alpha: 0.05)
+        open var titleFont = UIFont.boldSystemFont(ofSize: 16)
+        open var titleColor = UIColor.brown
+        open var messageFont = UIFont.systemFont(ofSize: 14)
+        open var messageColor = UIColor.black
+        open var buttonFont: [Alert.ActionStyle : UIFont] = [
+            .default : UIFont.systemFont(ofSize: 16),
+            .cancel  : UIFont.systemFont(ofSize: 16),
+            .destructive  : UIFont.systemFont(ofSize: 16)
         ]
-        public var buttonTextColor: [Alert.ActionStyle : UIColor] = [
-            .Default : UIColor.blackColor(),
-            .Cancel  : UIColor.grayColor(),
-            .Destructive  : UIColor.redColor()
+        open var buttonTextColor: [Alert.ActionStyle : UIColor] = [
+            .default : UIColor.black,
+            .cancel  : UIColor.gray,
+            .destructive  : UIColor.red
         ]
-        public var buttonDisableTextColor: [Alert.ActionStyle : UIColor] = [
-            .Default : UIColor.blackColor(),
-            .Cancel  : UIColor.blackColor(),
-            .Destructive  : UIColor.redColor()
+        open var buttonDisableTextColor: [Alert.ActionStyle : UIColor] = [
+            .default : UIColor.black,
+            .cancel  : UIColor.black,
+            .destructive  : UIColor.red
         ]
-        public var textFieldHeight: CGFloat = 32
-        public var textFieldBorderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
-        public var buttonHeight: CGFloat = 44
+        open var textFieldHeight: CGFloat = 32
+        open var textFieldBorderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
+        open var buttonHeight: CGFloat = 44
         
-        public convenience init(title: String?, message: String?, effect: UIBlurEffect = UIBlurEffect(style: .ExtraLight), style: Alert.ControllerStyle) {
+        public convenience init(title: String?, message: String?, effect: UIBlurEffect = UIBlurEffect(style: .extraLight), style: Alert.ControllerStyle) {
             self.init(nibName: nil, bundle: nil)
             self.title = title
             self.message = message
@@ -172,17 +170,17 @@ public class PCLBlurEffectAlert {
             
             //
             self.textAreaVisualEffectView = UIVisualEffectView(effect: effect) as UIVisualEffectView
-
+            
             // NotificationCenter
             Alert.NotificationManager.sharedInstance.addAlertActionEnabledDidChangeNotificationObserver(self)
             Alert.NotificationManager.sharedInstance.addKeyboardNotificationObserver(self)
             
             // 背景見えるように
-            modalPresentationStyle = .OverCurrentContext
+            modalPresentationStyle = .overCurrentContext
             transitioningDelegate = self
-            view.frame.size = UIScreen.mainScreen().bounds.size
-            overlayView.frame = UIScreen.mainScreen().bounds
-            view.insertSubview(overlayView, atIndex: 0)
+            view.frame.size = UIScreen.main.bounds.size
+            overlayView.frame = UIScreen.main.bounds
+            view.insertSubview(overlayView, at: 0)
             view.addSubview(containerView)
             
             containerView.delegate = self
@@ -204,99 +202,99 @@ public class PCLBlurEffectAlert {
         }
         
         
-        private func configureConstraints() {
+        fileprivate func configureConstraints() {
             containerView.translatesAutoresizingMaskIntoConstraints = false
             let containerViewTopConstraint = NSLayoutConstraint(item: containerView,
-                attribute: .Top,
-                relatedBy: .Equal,
-                toItem: view,
-                attribute: .Top,
-                multiplier: 1,
-                constant: 0)
+                                                                attribute: .top,
+                                                                relatedBy: .equal,
+                                                                toItem: view,
+                                                                attribute: .top,
+                                                                multiplier: 1,
+                                                                constant: 0)
             let containerViewRightConstraint = NSLayoutConstraint(item: containerView,
-                attribute: .Right,
-                relatedBy: .Equal,
-                toItem: view,
-                attribute: .Right,
-                multiplier: 1,
-                constant: 0)
+                                                                  attribute: .right,
+                                                                  relatedBy: .equal,
+                                                                  toItem: view,
+                                                                  attribute: .right,
+                                                                  multiplier: 1,
+                                                                  constant: 0)
             let containerViewLeftConstraint = NSLayoutConstraint(item: containerView,
-                attribute: .Left,
-                relatedBy: .Equal,
-                toItem: view,
-                attribute: .Left,
-                multiplier: 1,
-                constant: 0)
+                                                                 attribute: .left,
+                                                                 relatedBy: .equal,
+                                                                 toItem: view,
+                                                                 attribute: .left,
+                                                                 multiplier: 1,
+                                                                 constant: 0)
             containerViewBottomLayoutConstraint = NSLayoutConstraint(item: containerView,
-                attribute: .Bottom,
-                relatedBy: .Equal,
-                toItem: view,
-                attribute: .Bottom,
-                multiplier: 1,
-                constant: 0)
+                                                                     attribute: .bottom,
+                                                                     relatedBy: .equal,
+                                                                     toItem: view,
+                                                                     attribute: .bottom,
+                                                                     multiplier: 1,
+                                                                     constant: 0)
             view.addConstraints([containerViewTopConstraint, containerViewRightConstraint, containerViewLeftConstraint, containerViewBottomLayoutConstraint])
             
             alertView.translatesAutoresizingMaskIntoConstraints = false
             
             if isActionSheet {
                 let alertViewCenterXConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .CenterX,
-                    relatedBy: .Equal,
-                    toItem: containerView,
-                    attribute: .CenterX,
-                    multiplier: 1,
-                    constant: 0)
+                                                                    attribute: .centerX,
+                                                                    relatedBy: .equal,
+                                                                    toItem: containerView,
+                                                                    attribute: .centerX,
+                                                                    multiplier: 1,
+                                                                    constant: 0)
                 let alertViewBottomConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .Bottom,
-                    relatedBy: .Equal,
-                    toItem: containerView,
-                    attribute: .Bottom,
-                    multiplier: 1,
-                    constant: -(margin))
+                                                                   attribute: .bottom,
+                                                                   relatedBy: .equal,
+                                                                   toItem: containerView,
+                                                                   attribute: .bottom,
+                                                                   multiplier: 1,
+                                                                   constant: -(margin))
                 alertViewWidthConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .Width,
-                    relatedBy: .Equal,
-                    toItem: nil,
-                    attribute: .Width,
-                    multiplier: 1,
-                    constant: alertViewWidth)
+                                                              attribute: .width,
+                                                              relatedBy: .equal,
+                                                              toItem: nil,
+                                                              attribute: .width,
+                                                              multiplier: 1,
+                                                              constant: alertViewWidth)
                 alertViewHeightConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .Height,
-                    relatedBy: .Equal,
-                    toItem: nil,
-                    attribute: .Height,
-                    multiplier: 1,
-                    constant: 0)
+                                                               attribute: .height,
+                                                               relatedBy: .equal,
+                                                               toItem: nil,
+                                                               attribute: .height,
+                                                               multiplier: 1,
+                                                               constant: 0)
                 containerView.addConstraints([alertViewCenterXConstraint, alertViewBottomConstraint, alertViewWidthConstraint, alertViewHeightConstraint])
             } else {
                 let alertViewCenterXConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .CenterX,
-                    relatedBy: .Equal,
-                    toItem: containerView,
-                    attribute: .CenterX,
-                    multiplier: 1,
-                    constant: 0)
+                                                                    attribute: .centerX,
+                                                                    relatedBy: .equal,
+                                                                    toItem: containerView,
+                                                                    attribute: .centerX,
+                                                                    multiplier: 1,
+                                                                    constant: 0)
                 let alertViewCenterYConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .CenterY,
-                    relatedBy: .Equal,
-                    toItem: containerView,
-                    attribute: .CenterY,
-                    multiplier: 1,
-                    constant: 0)
+                                                                    attribute: .centerY,
+                                                                    relatedBy: .equal,
+                                                                    toItem: containerView,
+                                                                    attribute: .centerY,
+                                                                    multiplier: 1,
+                                                                    constant: 0)
                 alertViewWidthConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .Width,
-                    relatedBy: .Equal,
-                    toItem: nil,
-                    attribute: .Width,
-                    multiplier: 1,
-                    constant: alertViewWidth)
+                                                              attribute: .width,
+                                                              relatedBy: .equal,
+                                                              toItem: nil,
+                                                              attribute: .width,
+                                                              multiplier: 1,
+                                                              constant: alertViewWidth)
                 alertViewHeightConstraint = NSLayoutConstraint(item: alertView,
-                    attribute: .Height,
-                    relatedBy: .Equal,
-                    toItem: nil,
-                    attribute: .Height,
-                    multiplier: 1,
-                    constant: 0)
+                                                               attribute: .height,
+                                                               relatedBy: .equal,
+                                                               toItem: nil,
+                                                               attribute: .height,
+                                                               multiplier: 1,
+                                                               constant: 0)
                 containerView.addConstraints([alertViewCenterXConstraint, alertViewCenterYConstraint, alertViewWidthConstraint, alertViewHeightConstraint])
             }
             
@@ -304,161 +302,161 @@ public class PCLBlurEffectAlert {
             
             if isActionSheet {
                 let cornerViewTopConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Top,
-                    relatedBy: .Equal,
-                    toItem: alertView,
-                    attribute: .Top,
-                    multiplier: 1,
-                    constant: 0)
+                                                                 attribute: .top,
+                                                                 relatedBy: .equal,
+                                                                 toItem: alertView,
+                                                                 attribute: .top,
+                                                                 multiplier: 1,
+                                                                 constant: 0)
                 let cornerViewRightConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Right,
-                    relatedBy: .Equal,
-                    toItem: alertView,
-                    attribute: .Right,
-                    multiplier: 1,
-                    constant: 0)
+                                                                   attribute: .right,
+                                                                   relatedBy: .equal,
+                                                                   toItem: alertView,
+                                                                   attribute: .right,
+                                                                   multiplier: 1,
+                                                                   constant: 0)
                 let cornerViewLeftConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Left,
-                    relatedBy: .Equal,
-                    toItem: alertView,
-                    attribute: .Left,
-                    multiplier: 1,
-                    constant: 0)
+                                                                  attribute: .left,
+                                                                  relatedBy: .equal,
+                                                                  toItem: alertView,
+                                                                  attribute: .left,
+                                                                  multiplier: 1,
+                                                                  constant: 0)
                 cornerViewHeightConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Height,
-                    relatedBy: .Equal,
-                    toItem: nil,
-                    attribute: .Height,
-                    multiplier: 1,
-                    constant: 0)
+                                                                attribute: .height,
+                                                                relatedBy: .equal,
+                                                                toItem: nil,
+                                                                attribute: .height,
+                                                                multiplier: 1,
+                                                                constant: 0)
                 alertView.addConstraints([cornerViewTopConstraint, cornerViewRightConstraint, cornerViewLeftConstraint, cornerViewHeightConstraint])
             } else {
                 let cornerViewTopConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Top,
-                    relatedBy: .Equal,
-                    toItem: alertView,
-                    attribute: .Top,
-                    multiplier: 1,
-                    constant: 0)
+                                                                 attribute: .top,
+                                                                 relatedBy: .equal,
+                                                                 toItem: alertView,
+                                                                 attribute: .top,
+                                                                 multiplier: 1,
+                                                                 constant: 0)
                 let cornerViewRightConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Right,
-                    relatedBy: .Equal,
-                    toItem: alertView,
-                    attribute: .Right,
-                    multiplier: 1,
-                    constant: 0)
+                                                                   attribute: .right,
+                                                                   relatedBy: .equal,
+                                                                   toItem: alertView,
+                                                                   attribute: .right,
+                                                                   multiplier: 1,
+                                                                   constant: 0)
                 let cornerViewLeftConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Left,
-                    relatedBy: .Equal,
-                    toItem: alertView,
-                    attribute: .Left,
-                    multiplier: 1,
-                    constant: 0)
+                                                                  attribute: .left,
+                                                                  relatedBy: .equal,
+                                                                  toItem: alertView,
+                                                                  attribute: .left,
+                                                                  multiplier: 1,
+                                                                  constant: 0)
                 let cornerViewBottomLayoutConstraint = NSLayoutConstraint(item: cornerView,
-                    attribute: .Bottom,
-                    relatedBy: .Equal,
-                    toItem: alertView,
-                    attribute: .Bottom,
-                    multiplier: 1,
-                    constant: 0)
+                                                                          attribute: .bottom,
+                                                                          relatedBy: .equal,
+                                                                          toItem: alertView,
+                                                                          attribute: .bottom,
+                                                                          multiplier: 1,
+                                                                          constant: 0)
                 alertView.addConstraints([cornerViewTopConstraint, cornerViewRightConstraint, cornerViewLeftConstraint, cornerViewBottomLayoutConstraint])
             }
-        
+            
             textAreaView.translatesAutoresizingMaskIntoConstraints = false
             textAreaVisualEffectView.translatesAutoresizingMaskIntoConstraints = false
             textAreaBackgroundView.translatesAutoresizingMaskIntoConstraints = false
             
             let textAreaViewTopConstraint = NSLayoutConstraint(item: textAreaView,
-                attribute: .Top,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Top,
-                multiplier: 1,
-                constant: 0)
+                                                               attribute: .top,
+                                                               relatedBy: .equal,
+                                                               toItem: cornerView,
+                                                               attribute: .top,
+                                                               multiplier: 1,
+                                                               constant: 0)
             let textAreaViewRightConstraint = NSLayoutConstraint(item: textAreaView,
-                attribute: .Right,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Right,
-                multiplier: 1,
-                constant: 0)
+                                                                 attribute: .right,
+                                                                 relatedBy: .equal,
+                                                                 toItem: cornerView,
+                                                                 attribute: .right,
+                                                                 multiplier: 1,
+                                                                 constant: 0)
             let textAreaViewLeftConstraint = NSLayoutConstraint(item: textAreaView,
-                attribute: .Left,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Left,
-                multiplier: 1,
-                constant: 0)
+                                                                attribute: .left,
+                                                                relatedBy: .equal,
+                                                                toItem: cornerView,
+                                                                attribute: .left,
+                                                                multiplier: 1,
+                                                                constant: 0)
             textAreaViewHeightConstraint = NSLayoutConstraint(item: textAreaView,
-                attribute: .Height,
-                relatedBy: .Equal,
-                toItem: nil,
-                attribute: .Height,
-                multiplier: 1,
-                constant: 0)
+                                                              attribute: .height,
+                                                              relatedBy: .equal,
+                                                              toItem: nil,
+                                                              attribute: .height,
+                                                              multiplier: 1,
+                                                              constant: 0)
             
             cornerView.addConstraints([textAreaViewTopConstraint, textAreaViewRightConstraint, textAreaViewLeftConstraint, textAreaViewHeightConstraint])
             
             let textAreaVisualEffectViewTopConstraint = NSLayoutConstraint(item: textAreaVisualEffectView,
-                attribute: .Top,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Top,
-                multiplier: 1,
-                constant: 0)
+                                                                           attribute: .top,
+                                                                           relatedBy: .equal,
+                                                                           toItem: cornerView,
+                                                                           attribute: .top,
+                                                                           multiplier: 1,
+                                                                           constant: 0)
             let textAreaVisualEffectViewRightConstraint = NSLayoutConstraint(item: textAreaVisualEffectView,
-                attribute: .Right,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Right,
-                multiplier: 1,
-                constant: 0)
+                                                                             attribute: .right,
+                                                                             relatedBy: .equal,
+                                                                             toItem: cornerView,
+                                                                             attribute: .right,
+                                                                             multiplier: 1,
+                                                                             constant: 0)
             let textAreaVisualEffectViewLeftConstraint = NSLayoutConstraint(item: textAreaVisualEffectView,
-                attribute: .Left,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Left,
-                multiplier: 1,
-                constant: 0)
+                                                                            attribute: .left,
+                                                                            relatedBy: .equal,
+                                                                            toItem: cornerView,
+                                                                            attribute: .left,
+                                                                            multiplier: 1,
+                                                                            constant: 0)
             textAreaVisualEffectViewHeightConstraint = NSLayoutConstraint(item: textAreaVisualEffectView,
-                attribute: .Height,
-                relatedBy: .Equal,
-                toItem: nil,
-                attribute: .Height,
-                multiplier: 1,
-                constant: 0)
+                                                                          attribute: .height,
+                                                                          relatedBy: .equal,
+                                                                          toItem: nil,
+                                                                          attribute: .height,
+                                                                          multiplier: 1,
+                                                                          constant: 0)
             cornerView.addConstraints([textAreaVisualEffectViewTopConstraint, textAreaVisualEffectViewRightConstraint, textAreaVisualEffectViewLeftConstraint, textAreaVisualEffectViewHeightConstraint])
             
             let textAreaBackgroundViewTopConstraint = NSLayoutConstraint(item: textAreaBackgroundView,
-                attribute: .Top,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Top,
-                multiplier: 1,
-                constant: 0)
+                                                                         attribute: .top,
+                                                                         relatedBy: .equal,
+                                                                         toItem: cornerView,
+                                                                         attribute: .top,
+                                                                         multiplier: 1,
+                                                                         constant: 0)
             let textAreaBackgroundViewRightConstraint = NSLayoutConstraint(item: textAreaBackgroundView,
-                attribute: .Right,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Right,
-                multiplier: 1,
-                constant: 0)
+                                                                           attribute: .right,
+                                                                           relatedBy: .equal,
+                                                                           toItem: cornerView,
+                                                                           attribute: .right,
+                                                                           multiplier: 1,
+                                                                           constant: 0)
             let textAreaBackgroundViewLeftConstraint = NSLayoutConstraint(item: textAreaBackgroundView,
-                attribute: .Left,
-                relatedBy: .Equal,
-                toItem: cornerView,
-                attribute: .Left,
-                multiplier: 1,
-                constant: 0)
+                                                                          attribute: .left,
+                                                                          relatedBy: .equal,
+                                                                          toItem: cornerView,
+                                                                          attribute: .left,
+                                                                          multiplier: 1,
+                                                                          constant: 0)
             textAreaBackgroundViewHeightConstraint = NSLayoutConstraint(item: textAreaBackgroundView,
-                attribute: .Height,
-                relatedBy: .Equal,
-                toItem: nil,
-                attribute: .Height,
-                multiplier: 1,
-                constant: 0)
+                                                                        attribute: .height,
+                                                                        relatedBy: .equal,
+                                                                        toItem: nil,
+                                                                        attribute: .height,
+                                                                        multiplier: 1,
+                                                                        constant: 0)
             cornerView.addConstraints([textAreaBackgroundViewTopConstraint, textAreaBackgroundViewRightConstraint, textAreaBackgroundViewLeftConstraint, textAreaBackgroundViewHeightConstraint])
-
+            
         }
         
         deinit {
@@ -467,97 +465,95 @@ public class PCLBlurEffectAlert {
         }
         
         /**
-        User Setting
-        */
-        public func configure(overlayBackgroundColor backgroundColor: UIColor) {
+         User Setting
+         */
+        open func configure(overlayBackgroundColor backgroundColor: UIColor) {
             overlayBackgroundColor = backgroundColor
         }
         
-        public func configure(backgroundColor backgroundColor: UIColor) {
+        open func configure(backgroundColor: UIColor) {
             var color = backgroundColor
-            let rgba = CGColorGetComponents(color.CGColor)
-            if rgba[3] > 0.1 {
-                color = UIColor(red: rgba[0], green: rgba[1], blue: rgba[2], alpha: 0.1)
+            if let rgba = color.cgColor.components, rgba.count > 2 {
+                if rgba[3] > CGFloat(0.1) {
+                    color = UIColor(red: (rgba[0]), green: (rgba[1]), blue: (rgba[2]), alpha: 0.1)
+                }
             }
             self.backgroundColor = color
         }
-
-        public func configure(titleFont font: UIFont, textColor: UIColor) {
+        
+        open func configure(titleFont font: UIFont, textColor: UIColor) {
             titleFont = font
             titleColor = textColor
         }
         
-        public func configure(messageFont font: UIFont, textColor: UIColor) {
+        open func configure(messageFont font: UIFont, textColor: UIColor) {
             messageFont = font
             messageColor = textColor
         }
         
-        public func configure(buttonFont buttonFont: [Alert.ActionStyle : UIFont!]? = nil, buttonTextColor: [Alert.ActionStyle : UIColor]? = nil, buttonDisableTextColor: [Alert.ActionStyle : UIColor]? = nil) {
-            if buttonFont?[.Default] != nil {
-                self.buttonFont[.Default] = buttonFont?[.Default]
-            } else if buttonFont?[.Destructive] != nil {
-                self.buttonFont[.Destructive] = buttonFont?[.Destructive]
-            } else if buttonFont?[.Cancel] != nil {
-                self.buttonFont[.Cancel] = buttonFont?[.Cancel]
+        open func configure(buttonFont: [Alert.ActionStyle : UIFont?]? = nil, buttonTextColor: [Alert.ActionStyle : UIColor]? = nil, buttonDisableTextColor: [Alert.ActionStyle : UIColor]? = nil) {
+            if let font = buttonFont?[.default] {
+                self.buttonFont[.default] = font
+            } else if let font = buttonFont?[.destructive] {
+                self.buttonFont[.destructive] = font
+            } else if let font = buttonFont?[.cancel] {
+                self.buttonFont[.cancel] = font
             }
-            if buttonTextColor?[.Default] != nil {
-                self.buttonTextColor[.Default] = buttonTextColor?[.Default]
-            } else if buttonTextColor?[.Destructive] != nil {
-                self.buttonTextColor[.Destructive] = buttonTextColor?[.Destructive]
-            } else if buttonTextColor?[.Cancel] != nil {
-                self.buttonTextColor[.Cancel] = buttonTextColor?[.Cancel]
+            if buttonTextColor?[.default] != nil {
+                self.buttonTextColor[.default] = buttonTextColor?[.default]
+            } else if buttonTextColor?[.destructive] != nil {
+                self.buttonTextColor[.destructive] = buttonTextColor?[.destructive]
+            } else if buttonTextColor?[.cancel] != nil {
+                self.buttonTextColor[.cancel] = buttonTextColor?[.cancel]
             }
-            if buttonDisableTextColor?[.Default] != nil {
-                self.buttonDisableTextColor[.Default] = buttonDisableTextColor?[.Default]
-            } else if buttonDisableTextColor?[.Destructive] != nil {
-                self.buttonDisableTextColor[.Destructive] = buttonDisableTextColor?[.Destructive]
-            } else if buttonDisableTextColor?[.Cancel] != nil {
-                self.buttonDisableTextColor[.Cancel] = buttonDisableTextColor?[.Cancel]
+            if buttonDisableTextColor?[.default] != nil {
+                self.buttonDisableTextColor[.default] = buttonDisableTextColor?[.default]
+            } else if buttonDisableTextColor?[.destructive] != nil {
+                self.buttonDisableTextColor[.destructive] = buttonDisableTextColor?[.destructive]
+            } else if buttonDisableTextColor?[.cancel] != nil {
+                self.buttonDisableTextColor[.cancel] = buttonDisableTextColor?[.cancel]
             }
         }
         
-        public func configure(alertViewWidth width: CGFloat) {
+        open func configure(alertViewWidth width: CGFloat) {
             alertViewWidth = width
         }
         
-        public func configure(cornerRadius cornerRadius: CGFloat) {
+        open func configure(cornerRadius: CGFloat) {
             self.cornerRadius = cornerRadius
         }
         
-        public func configure(textFieldBorderColor textFieldBorderColor: UIColor) {
+        open func configure(textFieldBorderColor: UIColor) {
             self.textFieldBorderColor = textFieldBorderColor
         }
         
-        public func configure(buttonHeight buttonHeight: CGFloat) {
+        open func configure(buttonHeight: CGFloat) {
             self.buttonHeight = buttonHeight
         }
         
         // Adds Action
-        public func addAction(action: AlertAction) {
+        open func addAction(_ action: AlertAction) {
             // Error
-            if action.style == .Cancel {
-                for index in 0..<actions.count {
-                    if actions[index].style == .Cancel {
-                        fatalError("Can not be used plurality cancel button")
-                    }
+            if action.style == .cancel {
+                if actions.filter({ $0.style == .cancel }).count > 0 {
+                    fatalError("Can not be used plurality cancel button")
                 }
             }
-
             action.tag = actions.count
             action.button?.tag = action.tag
-            if action.style == .Cancel {
+            if action.style == .cancel {
                 cancelAction = action
                 cancelActionTag = action.tag
             }
             actions.append(action)
-            action.button?.setTitle(action.title, forState: .Normal)
-            action.button?.enabled = action.enabled
+            action.button?.setTitle(action.title, for: .normal)
+            action.button?.isEnabled = action.enabled
             action.visualEffectView = UIVisualEffectView(effect: effect) as UIVisualEffectView
-            action.visualEffectView?.userInteractionEnabled = false
+            action.visualEffectView?.isUserInteractionEnabled = false
         }
         
         // Adds UITextFields
-        public func addTextFieldWithConfigurationHandler(configurationHandler: ((UITextField!) -> Void)? = nil) {
+        open func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextField?) -> Void)? = nil) {
             if isActionSheet {
                 fatalError("Not available")
             }
@@ -566,40 +562,13 @@ public class PCLBlurEffectAlert {
             textFields.append(textField)
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         // layout
-        public override func viewWillAppear(animated: Bool) {
+        open override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             adjustLayout()
         }
         
-        private func adjustLayout() {
+        fileprivate func adjustLayout() {
             
             if !isNeedlayout {
                 return
@@ -613,20 +582,20 @@ public class PCLBlurEffectAlert {
             
             cornerView.layer.cornerRadius = cornerRadius
             cornerView.clipsToBounds = true
-
+            
             var textAreaPositionY: CGFloat = 0
             textAreaPositionY += (margin * 2)
             let textAreaWidth = alertViewWidth - (margin * 4)
             
             if hasTitle {
-                titleLabel.frame.size = CGSizeMake(textAreaWidth, 0)
+                titleLabel.frame.size = CGSize(width: textAreaWidth, height: 0)
                 titleLabel.numberOfLines = 0
-                titleLabel.textAlignment = .Center
+                titleLabel.textAlignment = .center
                 titleLabel.font = titleFont
                 titleLabel.textColor = titleColor
                 titleLabel.text = title
                 titleLabel.sizeToFit()
-                titleLabel.frame = CGRectMake(margin * 2, textAreaPositionY, textAreaWidth, titleLabel.frame.height)
+                titleLabel.frame = CGRect(x: margin * 2, y: textAreaPositionY, width: textAreaWidth, height: titleLabel.frame.height)
                 textAreaView.addSubview(titleLabel)
                 textAreaPositionY += titleLabel.frame.height
             }
@@ -635,14 +604,14 @@ public class PCLBlurEffectAlert {
                 if hasTitle {
                     textAreaPositionY += margin
                 }
-                messageLabel.frame.size = CGSizeMake(textAreaWidth, 0)
+                messageLabel.frame.size = CGSize(width: textAreaWidth, height: 0)
                 messageLabel.numberOfLines = 0
-                messageLabel.textAlignment = .Center
+                messageLabel.textAlignment = .center
                 messageLabel.text = message
                 messageLabel.font = messageFont
                 messageLabel.textColor = messageColor
                 messageLabel.sizeToFit()
-                messageLabel.frame = CGRectMake(margin * 2, textAreaPositionY, textAreaWidth, messageLabel.frame.height)
+                messageLabel.frame = CGRect(x: margin * 2, y: textAreaPositionY, width: textAreaWidth, height: messageLabel.frame.height)
                 textAreaView.addSubview(messageLabel)
                 textAreaPositionY += messageLabel.frame.height
             }
@@ -652,25 +621,25 @@ public class PCLBlurEffectAlert {
                     textAreaPositionY += margin
                 }
                 let textFieldsView = UIView()
-                textFieldsView.backgroundColor = UIColor.whiteColor()
+                textFieldsView.backgroundColor = UIColor.white
                 textFieldsView.layer.cornerRadius = (cornerRadius / 2)
                 textFieldsView.clipsToBounds = true
                 let textFieldsViewWidth = textAreaWidth
                 var textFieldsViewHeight: CGFloat = 0
-                textFieldsView.frame = CGRectMake(margin * 2, textAreaPositionY + margin, textFieldsViewWidth, textFieldsViewHeight)
-                for (index, textField) in textFields.enumerate() {
-                    textField.frame = CGRectMake(margin, CGFloat(index) * textFieldHeight, textFieldsViewWidth - (2 * margin), textFieldHeight)
+                textFieldsView.frame = CGRect(x: margin * 2, y: textAreaPositionY + margin, width: textFieldsViewWidth, height: textFieldsViewHeight)
+                textFields.enumerated().forEach { index, textField in
+                    textField.frame = CGRect(x: margin, y: CGFloat(index) * textFieldHeight, width: textFieldsViewWidth - (2 * margin), height: textFieldHeight)
                     textFieldsView.addSubview(textField)
                     textFieldsViewHeight += textFieldHeight
                     if index > 0 {
                         let topBorder = CALayer()
-                        topBorder.frame = CGRectMake(-margin, 0, textFieldsViewWidth + (margin * 2), thin)
-                        topBorder.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).CGColor
+                        topBorder.frame = CGRect(x: -margin, y: 0, width: textFieldsViewWidth + (margin * 2), height: thin)
+                        topBorder.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
                         textField.layer.sublayers = [topBorder]
                         textField.clipsToBounds = false
                     }
                 }
-                textFieldsView.layer.borderColor = textFieldBorderColor.CGColor
+                textFieldsView.layer.borderColor = textFieldBorderColor.cgColor
                 textFieldsView.layer.borderWidth = thin
                 textAreaView.addSubview(textFieldsView)
                 textFieldsView.frame.size.height = textFieldsViewHeight
@@ -694,9 +663,9 @@ public class PCLBlurEffectAlert {
             // button setUp
             if isAlert && actions.count == 2 && (hasTitle || hasMessage || hasTextField) {
                 cornerViewHeight += thin
-                for index in 0..<actions.count {
+                (0..<actions.count).forEach { index in
                     let action = actions[index]
-                    let rect = CGRectMake(CGFloat(index) * alertViewWidth / 2, cornerViewHeight, alertViewWidth / 2, buttonHeight)
+                    let rect = CGRect(x: CGFloat(index) * alertViewWidth / 2, y: cornerViewHeight, width: alertViewWidth / 2, height: buttonHeight)
                     action.backgroundView.frame = rect
                     action.backgroundView.backgroundColor = backgroundColor
                     action.visualEffectView?.frame = rect
@@ -705,8 +674,8 @@ public class PCLBlurEffectAlert {
                         cornerView.addSubview(action.backgroundView)
                         cornerView.addSubview(visualEffectView)
                     }
-                    action.button.setTitleColor(buttonTextColor[action.style], forState: .Normal)
-                    action.button.setTitleColor(buttonDisableTextColor[action.style], forState: .Disabled)
+                    action.button.setTitleColor(buttonTextColor[action.style], for: .normal)
+                    action.button.setTitleColor(buttonDisableTextColor[action.style], for: .disabled)
                     action.button.titleLabel?.font = buttonFont[action.style]
                     if index == actions.count - 1 {
                         action.visualEffectView?.frame.origin.x += thin
@@ -714,17 +683,15 @@ public class PCLBlurEffectAlert {
                         action.button.frame.origin.x += thin
                         action.button.frame.size.width -= thin
                     }
-                    action.button.addTarget(self,
-                        action: #selector(Controller.buttonWasTouchUpInside(_:)),
-                        forControlEvents: .TouchUpInside)
-                    cornerView.addSubview(action.button)
+                    action.button.addTarget(self, action: #selector(Controller.buttonWasTouchUpInside(_:)), for: .touchUpInside)
+                    cornerView.addSubview(action.button)                    
                 }
                 cornerViewHeight += buttonHeight
             } else if isAlert || isAlertVertical {
-                for index in 0..<actions.count {
+                (0..<actions.count).forEach { index in
                     cornerViewHeight += thin
                     let action = actions[index]
-                    let rect = CGRectMake(0, cornerViewHeight, alertViewWidth, buttonHeight)
+                    let rect = CGRect(x: 0, y: cornerViewHeight, width: alertViewWidth, height: buttonHeight)
                     action.backgroundView.frame = rect
                     action.backgroundView.backgroundColor = backgroundColor
                     action.visualEffectView?.frame = rect
@@ -733,25 +700,24 @@ public class PCLBlurEffectAlert {
                         cornerView.addSubview(action.backgroundView)
                         cornerView.addSubview(visualEffectView)
                     }
-                    action.button.setTitleColor(buttonTextColor[action.style], forState: .Normal)
-                    action.button.setTitleColor(buttonDisableTextColor[action.style], forState: .Disabled)
+                    action.button.setTitleColor(buttonTextColor[action.style], for: .normal)
+                    action.button.setTitleColor(buttonDisableTextColor[action.style], for: .disabled)
                     action.button.titleLabel?.font = buttonFont[action.style]
-                    action.button.addTarget(self,
-                        action: #selector(Controller.buttonWasTouchUpInside(_:)),
-                        forControlEvents: .TouchUpInside)
+                    action.button.addTarget(self, action: #selector(Controller.buttonWasTouchUpInside(_:)), for: .touchUpInside)
                     cornerView.addSubview(action.button)
                     cornerViewHeight += buttonHeight
                 }
             } else {
                 cornerViewHeight += thin
                 var cancelIndex = -1
-                for index in 0..<actions.count {
+                (0..<actions.count).forEach { index in
                     let action = actions[index]
-                    if action.style == .Cancel {
+                    switch action.style {
+                    case .cancel:
                         cancelIndex = index
-                    } else {
+                    default:
                         cornerViewHeight += thin
-                        let rect = CGRectMake(0, cornerViewHeight, alertViewWidth, buttonHeight)
+                        let rect = CGRect(x: 0, y: cornerViewHeight, width: alertViewWidth, height: buttonHeight)
                         action.backgroundView.frame = rect
                         action.backgroundView.backgroundColor = backgroundColor
                         action.visualEffectView?.frame = rect
@@ -760,23 +726,19 @@ public class PCLBlurEffectAlert {
                             cornerView.addSubview(action.backgroundView)
                             cornerView.addSubview(visualEffectView)
                         }
-                        action.button.setTitleColor(buttonTextColor[action.style], forState: .Normal)
-                        action.button.setTitleColor(buttonDisableTextColor[action.style], forState: .Disabled)
+                        action.button.setTitleColor(buttonTextColor[action.style], for: .normal)
+                        action.button.setTitleColor(buttonDisableTextColor[action.style], for: .disabled)
                         action.button.titleLabel?.font = buttonFont[action.style]
-                        action.button.addTarget(self,
-                            action: #selector(Controller.buttonWasTouchUpInside(_:)),
-                            forControlEvents: .TouchUpInside)
+                        action.button.addTarget(self, action: #selector(Controller.buttonWasTouchUpInside(_:)), for: .touchUpInside)
                         cornerView.addSubview(action.button)
                         cornerViewHeight += buttonHeight
                     }
                 }
-                
                 alertViewHeight = cornerViewHeight
-                
                 if cancelIndex >= 0 { // cancel
                     alertViewHeight += margin
                     let action = actions[cancelIndex]
-                    let rect = CGRectMake(0, alertViewHeight, alertViewWidth, buttonHeight)
+                    let rect = CGRect(x: 0, y: alertViewHeight, width: alertViewWidth, height: buttonHeight)
                     action.backgroundView.frame = rect
                     action.backgroundView.backgroundColor = backgroundColor
                     action.visualEffectView?.frame = rect
@@ -785,20 +747,16 @@ public class PCLBlurEffectAlert {
                         alertView.addSubview(action.backgroundView)
                         alertView.addSubview(visualEffectView)
                     }
-                    action.button.setTitleColor(buttonTextColor[action.style], forState: .Normal)
-                    action.button.setTitleColor(buttonDisableTextColor[action.style], forState: .Disabled)
+                    action.button.setTitleColor(buttonTextColor[action.style], for: .normal)
+                    action.button.setTitleColor(buttonDisableTextColor[action.style], for: .disabled)
                     action.button.titleLabel?.font = buttonFont[action.style]
-                    action.button.addTarget(self,
-                        action: #selector(Controller.buttonWasTouchUpInside(_:)),
-                        forControlEvents: .TouchUpInside)
-                    
+                    action.button.addTarget(self, action: #selector(Controller.buttonWasTouchUpInside(_:)), for: .touchUpInside)
                     action.backgroundView.clipsToBounds = true
                     action.backgroundView.layer.cornerRadius = cornerRadius
                     action.visualEffectView?.clipsToBounds = true
                     action.visualEffectView?.layer.cornerRadius = cornerRadius
                     action.button.clipsToBounds = true
-                    action.button.layer.cornerRadius = cornerRadius
-                    
+                    action.button.layer.cornerRadius = cornerRadius                    
                     alertView.addSubview(action.button)
                     alertViewHeight += buttonHeight
                 }
@@ -814,23 +772,23 @@ public class PCLBlurEffectAlert {
             alertViewHeightConstraint.constant = alertViewHeight
             view.layoutIfNeeded()
         }
-
-        func respondsViewDidTouch(view: UIView) {
+        
+        func respondsViewDidTouch(_ view: UIView) {
             if isActionSheet {
                 guard let cancelAction = cancelAction else {
                     return
                 }
-                dismissViewControllerAnimated(true) {
+                dismiss(animated: true) {
                     cancelAction.handler?(cancelAction)
                 }
             }
         }
         
         // Button Tapped Action
-        private dynamic func buttonWasTouchUpInside(sender: UIButton) {
-            sender.selected = true
+        fileprivate dynamic func buttonWasTouchUpInside(_ sender: UIButton) {
+            sender.isSelected = true
             let action = actions[sender.tag]
-            dismissViewControllerAnimated(true) {
+            dismiss(animated: true) {
                 action.handler?(action)
             }
         }
@@ -838,19 +796,19 @@ public class PCLBlurEffectAlert {
     }
     
     // MARK: - TransitionAnimator
-    public class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-        private typealias TransitionAnimator = Alert.TransitionAnimator
-        private static let presentBackAnimationDuration: NSTimeInterval = 0.45
-        private static let dismissBackAnimationDuration: NSTimeInterval = 0.35
+    open class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+        fileprivate typealias TransitionAnimator = Alert.TransitionAnimator
+        fileprivate static let presentBackAnimationDuration: TimeInterval = 0.45
+        fileprivate static let dismissBackAnimationDuration: TimeInterval = 0.35
         
-        private var goingPresent: Bool?
+        fileprivate var goingPresent: Bool?
         
         init(present: Bool) {
             super.init()
             goingPresent = present
         }
         
-        public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+        open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
             if goingPresent == true {
                 return TransitionAnimator.presentBackAnimationDuration
             } else {
@@ -858,7 +816,7 @@ public class PCLBlurEffectAlert {
             }
         }
         
-        public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
             if goingPresent == true {
                 presentAnimation(transitionContext)
             } else {
@@ -866,125 +824,111 @@ public class PCLBlurEffectAlert {
             }
         }
         
-        private func presentAnimation(transitionContext: UIViewControllerContextTransitioning) {
-            if let alertController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as? Alert.Controller,
-                containerView = transitionContext.containerView() {
-                    containerView.backgroundColor = UIColor.clearColor()
-                    containerView.addSubview(alertController.view)
-                    
-                    alertController.overlayView.alpha = 0
-                    
+        fileprivate func presentAnimation(_ transitionContext: UIViewControllerContextTransitioning) {
+            if let alertController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as? Alert.Controller {
+                let containerView = transitionContext.containerView
+                containerView.backgroundColor = UIColor.clear
+                containerView.addSubview(alertController.view)
+                alertController.overlayView.alpha = 0
+                if alertController.isActionSheet {
+                    alertController.alertView.transform = CGAffineTransform(translationX: 0, y: alertController.alertView.frame.height)
+                } else {
+                    alertController.cornerView.subviews.forEach({ $0.alpha = 0 })
+                    alertController.alertView.center = alertController.view.center
+                    alertController.alertView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                }
+                let animations = {
+                    alertController.overlayView.alpha = 1
                     if alertController.isActionSheet {
-                        alertController.alertView.transform = CGAffineTransformMakeTranslation(0, alertController.alertView.frame.height)
+                        alertController.alertView.transform = CGAffineTransform(translationX: 0, y: -10)
                     } else {
-                        alertController.cornerView.subviews.forEach({ $0.alpha = 0 })
-                        alertController.alertView.center = alertController.view.center
-                        alertController.alertView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+                        alertController.cornerView.subviews.forEach({ $0.alpha = 1 })
+                        alertController.alertView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
                     }
-                    
-                    UIView.animateWithDuration(transitionDuration(transitionContext) * (5 / 9),
-                        animations: {
-                            alertController.overlayView.alpha = 1
-                            if alertController.isActionSheet {
-                                alertController.alertView.transform = CGAffineTransformMakeTranslation(0, -10)
-                            } else {
-                                alertController.cornerView.subviews.forEach({ $0.alpha = 1 })
-                                alertController.alertView.transform = CGAffineTransformMakeScale(1.05, 1.05)
-                            }
-                        },
-                        completion: { finished in
+                }
+                UIView.animate(withDuration: transitionDuration(using: transitionContext) * (5 / 9), animations: animations) { finished in
+                    if finished {
+                        let animations = {
+                            alertController.alertView.transform = CGAffineTransform.identity
+                        }
+                        UIView.animate(withDuration: self.transitionDuration(using: transitionContext) * (4 / 9), animations: animations) { finished in
                             if finished {
-                                UIView.animateWithDuration(self.transitionDuration(transitionContext) * (4 / 9),
-                                    animations: {
-                                        alertController.alertView.transform = CGAffineTransformIdentity
-                                    },
-                                    completion: { finished in
-                                        if finished {
-                                            let cancelled = transitionContext.transitionWasCancelled()
-                                            if cancelled {
-                                                alertController.view.removeFromSuperview()
-                                            }
-                                            transitionContext.completeTransition(!cancelled)
-                                        }
-                                })
+                                let cancelled = transitionContext.transitionWasCancelled
+                                if cancelled {
+                                    alertController.view.removeFromSuperview()
+                                }
+                                transitionContext.completeTransition(!cancelled)
                             }
-                    })
+                        }
+                    }
+                }
             } else {
                 transitionContext.completeTransition(false)
             }
         }
         
-        private func dismissAnimation(transitionContext: UIViewControllerContextTransitioning) {
-            if let alertController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? Alert.Controller {
-                UIView.animateWithDuration(transitionDuration(transitionContext),
-                    delay: 0,
-                    usingSpringWithDamping: 1,
-                    initialSpringVelocity: 0,
-                    options: .CurveEaseInOut,
-                    animations: {
-                        alertController.overlayView.alpha = 0
-                        if alertController.isActionSheet {
-                            alertController.containerView.transform = CGAffineTransformMakeTranslation(0, alertController.alertView.frame.height)
-                        } else {
-                            alertController.alertView.transform = CGAffineTransformMakeScale(0.8, 0.8)
-                            alertController.cornerView.subviews.forEach({ $0.alpha = 0 })
-                        }
-                    },
-                    completion: { finished in
-                        if finished {
-                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-                        }
-                })
+        fileprivate func dismissAnimation(_ transitionContext: UIViewControllerContextTransitioning) {
+            if let alertController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? Alert.Controller {
+                let animations = {
+                    alertController.overlayView.alpha = 0
+                    if alertController.isActionSheet {
+                        alertController.containerView.transform = CGAffineTransform(translationX: 0, y: alertController.alertView.frame.height)
+                    } else {
+                        alertController.alertView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                        alertController.cornerView.subviews.forEach({ $0.alpha = 0 })
+                    }
+                }
+                UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: animations) { finished in
+                    if finished {
+                        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                    }
+                }
             } else {
                 transitionContext.completeTransition(false)
             }
-            
         }
     }
-
-    private class RespondsView: UIView {
+    
+    fileprivate class RespondsView: UIView {
         weak var delegate: PCLRespondsViewDelegate?
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
-        
         override init(frame: CGRect) {
             super.init(frame: frame)
         }
-        
-        override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-            super.touchesEnded(touches, withEvent: event)
+        override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+            super.touchesEnded(touches, with: event)
             delegate?.respondsViewDidTouch(self)
         }
     }
     
     // MARK: - NotificationManager
-    private class NotificationManager {
-        private typealias Manager = Alert.NotificationManager
-        private static let sharedInstance = Alert.NotificationManager()
+    fileprivate class NotificationManager {
+        fileprivate typealias Manager = Alert.NotificationManager
+        fileprivate static let sharedInstance = Alert.NotificationManager()
         class func sharedManager() -> Alert.NotificationManager {
             return sharedInstance
         }
-        private let notificationCenter = NSNotificationCenter.defaultCenter()
+        fileprivate let notificationCenter = NotificationCenter.default
     }
-    
 }
 
 
 // MARK: - PCLRespondsViewDelegate
 protocol PCLRespondsViewDelegate: class {
-    func respondsViewDidTouch(view: UIView)
+    func respondsViewDidTouch(_ view: UIView)
 }
 
 
 // MARK: - UIViewControllerTransitioningDelegate
 extension PCLBlurEffectAlert.Controller: UIViewControllerTransitioningDelegate {
     
-    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PCLBlurEffectAlert.TransitionAnimator(present: true)
     }
     
-    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PCLBlurEffectAlert.TransitionAnimator(present: false)
     }
     
@@ -992,81 +936,78 @@ extension PCLBlurEffectAlert.Controller: UIViewControllerTransitioningDelegate {
 
 // MARK: - NotificationManager
 extension PCLBlurEffectAlert.Controller : PCLAlertKeyboardNotificationObserver, PCLAlertActionEnabledDidChangeNotificationObserver {
-
-    func keyboardWillHide(notification: NSNotification) {
+    
+    func keyboardWillHide(_ notification: Notification) {
         keyboardHeight = 0
         containerViewBottomLayoutConstraint.constant = keyboardHeight
-        UIView.animateWithDuration(0.3,
-            animations: {
-                self.view.layoutIfNeeded()
-        })
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        if let userInfo = notification.userInfo as? [String: NSValue] {
-            let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue().size
-            keyboardHeight = keyboardSize.height
-            containerViewBottomLayoutConstraint.constant = -keyboardHeight
-            UIView.animateWithDuration(0.3,
-                animations: {
-                    self.view.layoutIfNeeded()
-            })
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
         }
     }
     
-    func didAlertActionEnabledDidChange(notification: NSNotification) {
-        for index in 0..<actions.count {
-            actions[index].button.enabled = actions[index].enabled
+    func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = (notification as NSNotification).userInfo as? [String: NSValue],
+            let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey]?.cgRectValue.size else {
+            return
         }
+        keyboardHeight = keyboardSize.height
+        containerViewBottomLayoutConstraint.constant = -keyboardHeight
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func didAlertActionEnabledDidChange(_ notification: Notification) {
+        (0..<actions.count).forEach { actions[$0].button.isEnabled = actions[$0].enabled }
     }
     
 }
 
 // MARK: - keyboard
 @objc protocol PCLAlertKeyboardNotificationObserver: class {
-    func keyboardWillShow(notification: NSNotification)
-    func keyboardWillHide(notification: NSNotification)
+    func keyboardWillShow(_ notification: Notification)
+    func keyboardWillHide(_ notification: Notification)
 }
 
 private extension PCLBlurEffectAlert.NotificationManager {
     
-    func addKeyboardNotificationObserver(observer: PCLAlertKeyboardNotificationObserver) {
-        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    func addKeyboardNotificationObserver(_ observer: PCLAlertKeyboardNotificationObserver) {
+        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func removeKeyboardNotificationObserver(observer: PCLAlertKeyboardNotificationObserver) {
-        notificationCenter.removeObserver(observer, name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.removeObserver(observer, name: UIKeyboardWillHideNotification, object: nil)
+    func removeKeyboardNotificationObserver(_ observer: PCLAlertKeyboardNotificationObserver) {
+        notificationCenter.removeObserver(observer, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.removeObserver(observer, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     func postKeyboardWillShowNotification() {
-        notificationCenter.postNotification(NSNotification(name: UIKeyboardWillShowNotification, object: nil))
+        notificationCenter.post(Notification(name: NSNotification.Name.UIKeyboardWillShow, object: nil))
     }
     
     func postKeyboardWillHideNotification() {
-        notificationCenter.postNotification(NSNotification(name: UIKeyboardWillHideNotification, object: nil))
+        notificationCenter.post(Notification(name: NSNotification.Name.UIKeyboardWillHide, object: nil))
     }
     
 }
 
 // MARK: - AlertActionEnabledDidChange
 @objc protocol PCLAlertActionEnabledDidChangeNotificationObserver: class {
-    func didAlertActionEnabledDidChange(notification: NSNotification)
+    func didAlertActionEnabledDidChange(_ notification: Notification)
 }
 
 private extension PCLBlurEffectAlert.NotificationManager {
     
-    static let DidAlertActionEnabledDidChangeNotification = "DidAlertActionEnabledDidChangeNotification"
+    private static let DidAlertActionEnabledDidChangeNotification = "DidAlertActionEnabledDidChangeNotification"
     
-    func addAlertActionEnabledDidChangeNotificationObserver(observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
-        notificationCenter.addObserver(observer, selector: #selector(PCLAlertActionEnabledDidChangeNotificationObserver.didAlertActionEnabledDidChange(_:)), name: Manager.DidAlertActionEnabledDidChangeNotification , object: nil)
+    func addAlertActionEnabledDidChangeNotificationObserver(_ observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
+        notificationCenter.addObserver(observer, selector: #selector(PCLAlertActionEnabledDidChangeNotificationObserver.didAlertActionEnabledDidChange(_:)), name: NSNotification.Name(rawValue: Manager.DidAlertActionEnabledDidChangeNotification) , object: nil)
     }
     
-    func removeAlertActionEnabledDidChangeNotificationObserver(observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
-        notificationCenter.removeObserver(observer, name: Manager.DidAlertActionEnabledDidChangeNotification, object: nil)
+    func removeAlertActionEnabledDidChangeNotificationObserver(_ observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
+        notificationCenter.removeObserver(observer, name: NSNotification.Name(rawValue: Manager.DidAlertActionEnabledDidChangeNotification), object: nil)
     }
     
     func postAlertActionEnabledDidChangeNotification() {
-        notificationCenter.postNotification(NSNotification(name: Manager.DidAlertActionEnabledDidChangeNotification, object: nil, userInfo: nil))
+        notificationCenter.post(Notification(name: Notification.Name(rawValue: Manager.DidAlertActionEnabledDidChangeNotification), object: nil, userInfo: nil))
     }
 }

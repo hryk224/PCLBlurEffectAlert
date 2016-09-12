@@ -3,14 +3,13 @@
 Swift AlertController, use UIVisualeffectview
 
 [![Cocoapods Compatible](http://img.shields.io/cocoapods/v/PCLBlurEffectAlert.svg?style=flat)](http://cocoadocs.org/docsets/PCLBlurEffectAlert)
-[![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
-
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 <img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample1.gif" width="320" > <img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample2.gif" width="320" >
 
 ## Requirements
 - iOS 8.0+
-- Swift 2.2+
+- Swift 3.0+
 - ARC
 
 ## Feature
@@ -29,10 +28,6 @@ Adding the following to your `Podfile` and running `pod install`:
 use_frameworks!
 pod "PCLBlurEffectAlert"
 ```
-
-<!--#### Carthage-->
-
-Add the following to your `Cartfile` and running `Cartfile update`:
 
 ```Ruby
 github "hryk224/PCLBlurEffectAlert"
