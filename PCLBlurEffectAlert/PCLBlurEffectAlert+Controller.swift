@@ -277,8 +277,8 @@ extension PCLBlurEffectAlert {
             buttonHeight = height
         }
         
-        open func configure(thin _thin: CGFloat) {
-            thin = _thin
+        open func configure(thin newThin: CGFloat) {
+            thin = newThin
         }
         
         // Adds Action
@@ -452,7 +452,6 @@ extension PCLBlurEffectAlert {
                     cornerViewHeight += buttonHeight
                 }
             default:
-                cornerViewHeight += thin
                 var cancelIndex = -1
                 (0..<actions.count).forEach { index in
                     let action = actions[index]

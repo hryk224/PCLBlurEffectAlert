@@ -120,7 +120,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 let action2 = PCLBlurEffectAlert.AlertAction(title: "No.2", style: .default) { _ in
                     print("No.2")
                 }
-                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3[disable]", style: .destructive) { _ in
+                let cancelAction = PCLBlurEffectAlert.AlertAction(title: "No.3", style: .destructive) { _ in
                     print("No.3")
                 }
                 cancelAction.enabled = false
