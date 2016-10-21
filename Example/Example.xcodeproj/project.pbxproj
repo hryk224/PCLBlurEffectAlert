@@ -12,21 +12,21 @@
 		935BD73D1CE272F400E5FDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935BD73B1CE272F400E5FDF7 /* Main.storyboard */; };
 		935BD73F1CE272F400E5FDF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935BD73E1CE272F400E5FDF7 /* Assets.xcassets */; };
 		935BD7421CE272F400E5FDF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935BD7401CE272F400E5FDF7 /* LaunchScreen.storyboard */; };
-		935BD7E61CE2759E00E5FDF7 /* PCLBlurEffectAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935BD7E51CE2758D00E5FDF7 /* PCLBlurEffectAlert.framework */; };
-		935BD7E71CE2759E00E5FDF7 /* PCLBlurEffectAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 935BD7E51CE2758D00E5FDF7 /* PCLBlurEffectAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED413F421D8AA81B0024036E /* PCLBlurEffectAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED413F411D8AA8130024036E /* PCLBlurEffectAlert.framework */; };
+		ED413F431D8AA81B0024036E /* PCLBlurEffectAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED413F411D8AA8130024036E /* PCLBlurEffectAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		935BD7E41CE2758D00E5FDF7 /* PBXContainerItemProxy */ = {
+		ED413F401D8AA8130024036E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 935BD7E01CE2758D00E5FDF7 /* PCLBlurEffectAlert.xcodeproj */;
+			containerPortal = ED413F3C1D8AA8130024036E /* PCLBlurEffectAlert.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 935BD7B81CE274A500E5FDF7;
 			remoteInfo = PCLBlurEffectAlert;
 		};
-		935BD7E81CE2759E00E5FDF7 /* PBXContainerItemProxy */ = {
+		ED413F441D8AA81B0024036E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 935BD7E01CE2758D00E5FDF7 /* PCLBlurEffectAlert.xcodeproj */;
+			containerPortal = ED413F3C1D8AA8130024036E /* PCLBlurEffectAlert.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 935BD7B71CE274A500E5FDF7;
 			remoteInfo = PCLBlurEffectAlert;
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				935BD7E71CE2759E00E5FDF7 /* PCLBlurEffectAlert.framework in Embed Frameworks */,
+				ED413F431D8AA81B0024036E /* PCLBlurEffectAlert.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,7 +55,7 @@
 		935BD73E1CE272F400E5FDF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		935BD7411CE272F400E5FDF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		935BD7431CE272F400E5FDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		935BD7E01CE2758D00E5FDF7 /* PCLBlurEffectAlert.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PCLBlurEffectAlert.xcodeproj; path = ../PCLBlurEffectAlert.xcodeproj; sourceTree = "<group>"; };
+		ED413F3C1D8AA8130024036E /* PCLBlurEffectAlert.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PCLBlurEffectAlert.xcodeproj; path = ../PCLBlurEffectAlert.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935BD7E61CE2759E00E5FDF7 /* PCLBlurEffectAlert.framework in Frameworks */,
+				ED413F421D8AA81B0024036E /* PCLBlurEffectAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +73,9 @@
 		935BD72B1CE272F400E5FDF7 = {
 			isa = PBXGroup;
 			children = (
-				935BD7E01CE2758D00E5FDF7 /* PCLBlurEffectAlert.xcodeproj */,
 				935BD7361CE272F400E5FDF7 /* Example */,
 				935BD7351CE272F400E5FDF7 /* Products */,
+				ED413F3B1D8AA8130024036E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,10 +100,18 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		935BD7E11CE2758D00E5FDF7 /* Products */ = {
+		ED413F3B1D8AA8130024036E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				935BD7E51CE2758D00E5FDF7 /* PCLBlurEffectAlert.framework */,
+				ED413F3C1D8AA8130024036E /* PCLBlurEffectAlert.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED413F3D1D8AA8130024036E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED413F411D8AA8130024036E /* PCLBlurEffectAlert.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,7 +131,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				935BD7E91CE2759E00E5FDF7 /* PBXTargetDependency */,
+				ED413F451D8AA81B0024036E /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -137,11 +145,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "hiroyuki yoshida";
 				TargetAttributes = {
 					935BD7331CE272F400E5FDF7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -158,8 +167,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 935BD7E11CE2758D00E5FDF7 /* Products */;
-					ProjectRef = 935BD7E01CE2758D00E5FDF7 /* PCLBlurEffectAlert.xcodeproj */;
+					ProductGroup = ED413F3D1D8AA8130024036E /* Products */;
+					ProjectRef = ED413F3C1D8AA8130024036E /* PCLBlurEffectAlert.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -170,11 +179,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		935BD7E51CE2758D00E5FDF7 /* PCLBlurEffectAlert.framework */ = {
+		ED413F411D8AA8130024036E /* PCLBlurEffectAlert.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PCLBlurEffectAlert.framework;
-			remoteRef = 935BD7E41CE2758D00E5FDF7 /* PBXContainerItemProxy */;
+			remoteRef = ED413F401D8AA8130024036E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -205,10 +214,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		935BD7E91CE2759E00E5FDF7 /* PBXTargetDependency */ = {
+		ED413F451D8AA81B0024036E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PCLBlurEffectAlert;
-			targetProxy = 935BD7E81CE2759E00E5FDF7 /* PBXContainerItemProxy */;
+			targetProxy = ED413F441D8AA81B0024036E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -246,8 +255,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -291,8 +302,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -311,6 +324,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -318,24 +332,26 @@
 		935BD7471CE272F400E5FDF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.hryk224.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		935BD7481CE272F400E5FDF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.hryk224.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
