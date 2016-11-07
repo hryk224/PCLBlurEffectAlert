@@ -29,10 +29,6 @@ use_frameworks!
 pod "PCLBlurEffectAlert"
 ```
 
-```Ruby
-github "hryk224/PCLBlurEffectAlert"
-```
-
 ### import
 
 ```Swift
