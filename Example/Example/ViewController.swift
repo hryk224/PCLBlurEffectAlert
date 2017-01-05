@@ -13,19 +13,20 @@ final class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView! {
         didSet {
             // tableView
-            tableView.estimatedRowHeight = 60
-            tableView.rowHeight = 60
-            tableView.layoutMargins = UIEdgeInsets.zero
-            tableView.separatorInset = UIEdgeInsets.zero
+            tableView.estimatedRowHeight = 100
+            tableView.rowHeight = 100
+            tableView.layoutMargins = .zero
+            tableView.separatorInset = .zero
             tableView.delegate = self
             tableView.dataSource = self
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
             tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
-            tableView.scrollIndicatorInsets.top = 64
-            tableView.contentInset.top = 64
         }
     }
     fileprivate var samples = ["sample1", "sample2", "sample3", "sample4", "sample5"]
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false

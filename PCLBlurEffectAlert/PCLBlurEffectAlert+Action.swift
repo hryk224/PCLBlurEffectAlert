@@ -10,15 +10,15 @@ import UIKit
 
 extension PCLBlurEffectAlert {
     open class AlertAction {
+        public typealias Action = ((Alert.AlertAction?) -> Void)
         var tag: Int = -1
         var title: String?
         var style: Alert.ActionStyle
-        var handler: ((Alert.AlertAction?) -> Void)?
+        var handler: Action?
         open var enabled: Bool = true {
             didSet {
-                if (oldValue != enabled) {
-                    Alert.NotificationManager.shared.postAlertActionEnabledDidChangeNotification()
-                }
+                guard oldValue != enabled else { return }
+                Alert.NotificationManager.shared.postAlertActionEnabledDidChangeNotification()
             }
         }
         var button: UIButton!
@@ -26,7 +26,7 @@ extension PCLBlurEffectAlert {
         lazy var backgroundView = UIView()
         public init(title: String,
                     style: Alert.ActionStyle,
-                    handler: ((Alert.AlertAction?) -> Void)?) {
+                    handler: Action?) {
             self.title = title
             self.style = style
             self.handler = handler

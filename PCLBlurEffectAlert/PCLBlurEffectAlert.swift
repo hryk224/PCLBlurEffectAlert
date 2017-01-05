@@ -11,14 +11,14 @@ import UIKit
 typealias Alert = PCLBlurEffectAlert
 
 open class PCLBlurEffectAlert {
-    public enum ActionStyle : Int {
-        case `default` = 0, cancel, destructive
+    public enum ActionStyle {
+        case `default`, cancel, destructive
         var isCancel: Bool {
             return self == .cancel
         }
     }
-    public enum ControllerStyle : Int {
-        case actionSheet = 0, alert, alertVertical
+    public enum ControllerStyle {
+        case actionSheet, alert, alertVertical
     }
 }
 

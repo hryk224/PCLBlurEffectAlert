@@ -302,9 +302,7 @@ extension PCLBlurEffectAlert {
         
         // Adds UITextFields
         open func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextField?) -> Void)? = nil) {
-            guard !isActionSheet else {
-                fatalError("Not available")
-            }
+            guard !isActionSheet else { fatalError("Not available") }
             let textField = UITextField()
             configurationHandler?(textField)
             textFields.append(textField)
@@ -322,9 +320,7 @@ extension PCLBlurEffectAlert {
         }
         
         fileprivate func adjustLayout() {
-            guard isNeedlayout else {
-                return
-            }
+            guard isNeedlayout else { return }
             isNeedlayout = false
             overlayView.backgroundColor = overlayBackgroundColor
             alertView.layer.cornerRadius = cornerRadius
@@ -407,8 +403,7 @@ extension PCLBlurEffectAlert {
             switch style {
             case .alert where actions.count == 2 && (hasTitle || hasMessage || hasTextField):
                 cornerViewHeight += thin
-                (0..<actions.count).forEach { index in
-                    let action = actions[index]
+                actions.enumerated().forEach { index, action in
                     let rect = CGRect(x: CGFloat(index) * alertViewWidth / 2, y: cornerViewHeight, width: alertViewWidth / 2, height: buttonHeight)
                     action.backgroundView.frame = rect
                     action.backgroundView.backgroundColor = backgroundColor
@@ -432,9 +427,8 @@ extension PCLBlurEffectAlert {
                 }
                 cornerViewHeight += buttonHeight
             case .alert, .alertVertical:
-                (0..<actions.count).forEach { index in
+                actions.enumerated().forEach { index, action in
                     cornerViewHeight += thin
-                    let action = actions[index]
                     let rect = CGRect(x: 0, y: cornerViewHeight, width: alertViewWidth, height: buttonHeight)
                     action.backgroundView.frame = rect
                     action.backgroundView.backgroundColor = backgroundColor
@@ -453,8 +447,7 @@ extension PCLBlurEffectAlert {
                 }
             default:
                 var cancelIndex = -1
-                (0..<actions.count).forEach { index in
-                    let action = actions[index]
+                actions.enumerated().forEach { index, action in
                     switch action.style {
                     case .cancel:
                         cancelIndex = index
@@ -515,12 +508,8 @@ extension PCLBlurEffectAlert {
         }
         
         func respondsViewDidTouch(_ view: UIView) {
-            guard isActionSheet else {
-                return
-            }
-            guard let cancelAction = cancelAction else {
-                return
-            }
+            guard isActionSheet else { return }
+            guard let cancelAction = cancelAction else { return }
             dismiss(animated: true) {
                 cancelAction.handler?(cancelAction)
             }
@@ -573,36 +562,36 @@ extension PCLBlurEffectAlert {
             containerView.backgroundColor = .clear
             containerView.addSubview(alertController.view)
             alertController.overlayView.alpha = 0
-            if alertController.isActionSheet {
+            let animations: (() -> Void)
+            switch alertController.style {
+            case .actionSheet:
                 alertController.alertView.transform = CGAffineTransform(translationX: 0, y: alertController.alertView.frame.height)
-            } else {
-                alertController.cornerView.subviews.forEach({ $0.alpha = 0 })
+                animations = {
+                    alertController.overlayView.alpha = 1
+                    alertController.alertView.transform = CGAffineTransform(translationX: 0, y: -10)
+                }
+            default:
+                alertController.cornerView.subviews.forEach { $0.alpha = 0 }
                 alertController.alertView.center = alertController.view.center
                 alertController.alertView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            }
-            let animations = {
-                alertController.overlayView.alpha = 1
-                if alertController.isActionSheet {
-                    alertController.alertView.transform = CGAffineTransform(translationX: 0, y: -10)
-                } else {
-                    alertController.cornerView.subviews.forEach({ $0.alpha = 1 })
+                animations = {
+                    alertController.overlayView.alpha = 1
+                    alertController.cornerView.subviews.forEach { $0.alpha = 1 }
                     alertController.alertView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
                 }
             }
             UIView.animate(withDuration: transitionDuration(using: transitionContext) * (5 / 9), animations: animations) { finished in
-                if finished {
-                    let animations = {
-                        alertController.alertView.transform = CGAffineTransform.identity
+                guard finished else { return }
+                let animations = {
+                    alertController.alertView.transform = CGAffineTransform.identity
+                }
+                UIView.animate(withDuration: self.transitionDuration(using: transitionContext) * (4 / 9), animations: animations) { finished in
+                    guard finished else { return }
+                    let cancelled = transitionContext.transitionWasCancelled
+                    if cancelled {
+                        alertController.view.removeFromSuperview()
                     }
-                    UIView.animate(withDuration: self.transitionDuration(using: transitionContext) * (4 / 9), animations: animations) { finished in
-                        if finished {
-                            let cancelled = transitionContext.transitionWasCancelled
-                            if cancelled {
-                                alertController.view.removeFromSuperview()
-                            }
-                            transitionContext.completeTransition(!cancelled)
-                        }
-                    }
+                    transitionContext.completeTransition(!cancelled)
                 }
             }
         }
@@ -613,17 +602,17 @@ extension PCLBlurEffectAlert {
             }
             let animations = {
                 alertController.overlayView.alpha = 0
-                if alertController.isActionSheet {
+                switch alertController.style {
+                case .actionSheet:
                     alertController.containerView.transform = CGAffineTransform(translationX: 0, y: alertController.alertView.frame.height)
-                } else {
+                default:
                     alertController.alertView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-                    alertController.cornerView.subviews.forEach({ $0.alpha = 0 })
+                    alertController.cornerView.subviews.forEach { $0.alpha = 0 }
                 }
             }
             UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: animations) { finished in
-                if finished {
-                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                }
+                guard finished else { return }
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         }
     }
@@ -650,7 +639,7 @@ extension PCLBlurEffectAlert.Controller : PCLAlertKeyboardNotificationObserver, 
         }
     }
     func didAlertActionEnabledDidChange(_ notification: Notification) {
-        (0..<actions.count).forEach { actions[$0].button.isEnabled = actions[$0].enabled }
+        actions.forEach { $0.button.isEnabled = $0.enabled }
     }
 }
 

@@ -52,11 +52,11 @@
 		935BD7B91CE274A500E5FDF7 /* PCLBlurEffectAlert */ = {
 			isa = PBXGroup;
 			children = (
-				935BD7BA1CE274A500E5FDF7 /* PCLBlurEffectAlert.h */,
-				935BD7C01CE274C600E5FDF7 /* PCLBlurEffectAlert.swift */,
+				935BD7BC1CE274A500E5FDF7 /* Info.plist */,
 				ED413F461D8AA9530024036E /* PCLBlurEffectAlert+Action.swift */,
 				ED413F481D8AAACD0024036E /* PCLBlurEffectAlert+Controller.swift */,
-				935BD7BC1CE274A500E5FDF7 /* Info.plist */,
+				935BD7BA1CE274A500E5FDF7 /* PCLBlurEffectAlert.h */,
+				935BD7C01CE274C600E5FDF7 /* PCLBlurEffectAlert.swift */,
 			);
 			path = PCLBlurEffectAlert;
 			sourceTree = "<group>";
@@ -142,8 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED413F491D8AAACD0024036E /* PCLBlurEffectAlert+Controller.swift in Sources */,
 				ED413F471D8AA9530024036E /* PCLBlurEffectAlert+Action.swift in Sources */,
+				ED413F491D8AAACD0024036E /* PCLBlurEffectAlert+Controller.swift in Sources */,
 				935BD7C11CE274C600E5FDF7 /* PCLBlurEffectAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
