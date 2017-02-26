@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Lf0-6h-j4A">
+                                <rect key="frame" x="137.5" y="0.0" width="100" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Axo-Le-ewo"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VK3-wA-HIw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Z9P-lH-Zic"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-F1-453">
+                                <rect key="frame" x="8" y="17" width="359" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="IfC-2F-JDi"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Alert"/>
+                                    <segment title="AlertVertical"/>
+                                    <segment title="ActionSheet"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ho7-a3-lkY">
+                                <rect key="frame" x="8" y="55" width="359" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="tkI-T3-M2Z"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="ExtraLight"/>
+                                    <segment title="Light"/>
+                                    <segment title="Dark"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5El-06-33n">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="tX5-Ih-v5I"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zPS-82-KeQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75686274509999996" green="0.1960784314" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lf0-6h-j4A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2E8-Eu-cP9"/>
+                            <constraint firstItem="Lf0-6h-j4A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2jL-v9-ttl"/>
+                            <constraint firstItem="VK3-wA-HIw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6tq-Kf-gX1"/>
+                            <constraint firstItem="b8G-F1-453" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="745-uS-22L"/>
+                            <constraint firstAttribute="trailing" secondItem="VK3-wA-HIw" secondAttribute="trailing" id="Fen-w1-tjW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lf0-6h-j4A" secondAttribute="bottom" id="HjV-oP-bet"/>
+                            <constraint firstItem="Ho7-a3-lkY" firstAttribute="top" secondItem="b8G-F1-453" secondAttribute="bottom" constant="10" id="Sij-3w-WAF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5El-06-33n" secondAttribute="bottom" id="Yah-Qo-HTT"/>
+                            <constraint firstAttribute="trailing" secondItem="Ho7-a3-lkY" secondAttribute="trailing" constant="8" id="adQ-XY-qwK"/>
+                            <constraint firstAttribute="trailing" secondItem="b8G-F1-453" secondAttribute="trailing" constant="8" id="eZU-IT-mBu"/>
+                            <constraint firstItem="VK3-wA-HIw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gEd-gO-DMb"/>
+                            <constraint firstItem="Ho7-a3-lkY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="h3c-Yk-iRZ"/>
+                            <constraint firstItem="b8G-F1-453" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="17" id="jKO-uh-ti6"/>
+                            <constraint firstItem="5El-06-33n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="khc-A2-bXb"/>
+                            <constraint firstItem="5El-06-33n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="mwa-Xh-Ruq"/>
+                            <constraint firstAttribute="trailing" secondItem="5El-06-33n" secondAttribute="trailing" id="oXC-Wb-SHt"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="blurEffecrSegmentedControl" destination="Ho7-a3-lkY" id="meq-sq-lcd"/>
+                        <outlet property="styleSegmentedControl" destination="b8G-F1-453" id="31G-Cx-7fe"/>
+                        <outlet property="tableView" destination="5El-06-33n" id="DUc-Mx-Idw"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1" y="47"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sampleBackground" width="1067" height="1600"/>
+    </resources>
+</document>
