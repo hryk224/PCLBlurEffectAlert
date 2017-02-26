@@ -8,25 +8,28 @@
 
 import UIKit
 
+public typealias PCLBlurEffectAlertAction = PCLBlurEffectAlert.Action
+
 extension PCLBlurEffectAlert {
-    open class AlertAction {
-        public typealias Action = ((Alert.AlertAction?) -> Void)
+    open class Action {
         var tag: Int = -1
         var title: String?
-        var style: Alert.ActionStyle
-        var handler: Action?
-        open var enabled: Bool = true {
-            didSet {
-                guard oldValue != enabled else { return }
-                Alert.NotificationManager.shared.postAlertActionEnabledDidChangeNotification()
-            }
-        }
+        var style: PCLBlurEffectAlert.ActionStyle
+        var handler: ((PCLBlurEffectAlert.Action?) -> Void)?
         var button: UIButton!
         var visualEffectView: UIVisualEffectView?
-        lazy var backgroundView = UIView()
+        lazy var backgroundView: UIView = {
+           return UIView()
+        }()
+        open var isEnabled: Bool = true {
+            didSet {
+                guard oldValue != isEnabled else { return }
+                PCLBlurEffectAlert.NotificationManager.shared.postAlertActionEnabledDidChangeNotification()
+            }
+        }
         public init(title: String,
-                    style: Alert.ActionStyle,
-                    handler: Action?) {
+                    style: PCLBlurEffectAlert.ActionStyle,
+                    handler: ((PCLBlurEffectAlert.Action?) -> Void)?) {
             self.title = title
             self.style = style
             self.handler = handler

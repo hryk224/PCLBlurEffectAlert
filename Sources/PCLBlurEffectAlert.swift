@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias Alert = PCLBlurEffectAlert
-
 open class PCLBlurEffectAlert {
     public enum ActionStyle {
         case `default`, cancel, destructive
@@ -47,8 +45,7 @@ protocol PCLRespondsViewDelegate: class {
 // MARK: - NotificationManager
 extension PCLBlurEffectAlert {
     struct NotificationManager {
-        typealias Manager = Alert.NotificationManager
-        static let shared = Alert.NotificationManager()
+        static let shared = PCLBlurEffectAlert.NotificationManager()
         fileprivate let notificationCenter = NotificationCenter.default
     }
 }
@@ -61,36 +58,56 @@ extension PCLBlurEffectAlert {
 
 extension PCLBlurEffectAlert.NotificationManager {
     func addKeyboardNotificationObserver(_ observer: PCLAlertKeyboardNotificationObserver) {
-        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(observer, selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.addObserver(observer,
+                                       selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillShow(_:)),
+                                       name: Notification.Name.UIKeyboardWillShow,
+                                       object: nil)
+        notificationCenter.addObserver(observer,
+                                       selector: #selector(PCLAlertKeyboardNotificationObserver.keyboardWillHide(_:)),
+                                       name: Notification.Name.UIKeyboardWillHide,
+                                       object: nil)
     }
     func removeKeyboardNotificationObserver(_ observer: PCLAlertKeyboardNotificationObserver) {
-        notificationCenter.removeObserver(observer, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.removeObserver(observer, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.removeObserver(observer,
+                                          name: Notification.Name.UIKeyboardWillShow,
+                                          object: nil)
+        notificationCenter.removeObserver(observer,
+                                          name: Notification.Name.UIKeyboardWillHide,
+                                          object: nil)
     }
     func postKeyboardWillShowNotification() {
-        notificationCenter.post(Notification(name: NSNotification.Name.UIKeyboardWillShow, object: nil))
+        notificationCenter.post(Notification(name: Notification.Name.UIKeyboardWillShow,
+                                             object: nil))
     }
     func postKeyboardWillHideNotification() {
-        notificationCenter.post(Notification(name: NSNotification.Name.UIKeyboardWillHide, object: nil))
+        notificationCenter.post(Notification(name: Notification.Name.UIKeyboardWillHide,
+                                             object: nil))
     }
 }
 
 
 // MARK: - AlertActionEnabledDidChange
 @objc protocol PCLAlertActionEnabledDidChangeNotificationObserver: class {
-    func didAlertActionEnabledDidChange(_ notification: Notification)
+    func alertActionEnabledDidChange(_ notification: Notification)
 }
 // MARK: - private
 extension PCLBlurEffectAlert.NotificationManager {
-    private static let DidAlertActionEnabledDidChangeNotification = "DidAlertActionEnabledDidChangeNotification"
+    private typealias Manager = PCLBlurEffectAlert.NotificationManager
+    private static let AlertActionEnabledDidChangeNotification = "AlertActionEnabledDidChangeNotification"
     func addAlertActionEnabledDidChangeNotificationObserver(_ observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
-        notificationCenter.addObserver(observer, selector: #selector(PCLAlertActionEnabledDidChangeNotificationObserver.didAlertActionEnabledDidChange(_:)), name: NSNotification.Name(rawValue: Manager.DidAlertActionEnabledDidChangeNotification) , object: nil)
+        notificationCenter.addObserver(observer,
+                                       selector: #selector(PCLAlertActionEnabledDidChangeNotificationObserver.alertActionEnabledDidChange(_:)),
+                                       name: Notification.Name(rawValue: Manager.AlertActionEnabledDidChangeNotification),
+                                       object: nil)
     }
     func removeAlertActionEnabledDidChangeNotificationObserver(_ observer: PCLAlertActionEnabledDidChangeNotificationObserver) {
-        notificationCenter.removeObserver(observer, name: NSNotification.Name(rawValue: Manager.DidAlertActionEnabledDidChangeNotification), object: nil)
+        notificationCenter.removeObserver(observer,
+                                          name: Notification.Name(rawValue: Manager.AlertActionEnabledDidChangeNotification),
+                                          object: nil)
     }
     func postAlertActionEnabledDidChangeNotification() {
-        notificationCenter.post(Notification(name: Notification.Name(rawValue: Manager.DidAlertActionEnabledDidChangeNotification), object: nil, userInfo: nil))
+        notificationCenter.post(Notification(name: Notification.Name(rawValue: Manager.AlertActionEnabledDidChangeNotification),
+                                             object: nil,
+                                             userInfo: nil))
     }
 }

@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93905ED61E630FC500A483CD /* PCLBlurEffectAlert+TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93905ED51E630FC500A483CD /* PCLBlurEffectAlert+TransitionAnimator.swift */; };
 		93CE21B21E563926003D4137 /* PCLBlurEffectAlert+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE21B01E563926003D4137 /* PCLBlurEffectAlert+Action.swift */; };
 		93CE21B31E563926003D4137 /* PCLBlurEffectAlert+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE21B11E563926003D4137 /* PCLBlurEffectAlert+Controller.swift */; };
 		93CE21B51E563938003D4137 /* PCLBlurEffectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE21B41E563938003D4137 /* PCLBlurEffectAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93905ED51E630FC500A483CD /* PCLBlurEffectAlert+TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PCLBlurEffectAlert+TransitionAnimator.swift"; sourceTree = "<group>"; };
 		93CE21AF1E563926003D4137 /* PCLBlurEffectAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLBlurEffectAlert.h; sourceTree = "<group>"; };
 		93CE21B01E563926003D4137 /* PCLBlurEffectAlert+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PCLBlurEffectAlert+Action.swift"; sourceTree = "<group>"; };
 		93CE21B11E563926003D4137 /* PCLBlurEffectAlert+Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PCLBlurEffectAlert+Controller.swift"; sourceTree = "<group>"; };
 		93CE21B41E563938003D4137 /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
-		OBJ_15 /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_15 /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 			children = (
 				93CE21B01E563926003D4137 /* PCLBlurEffectAlert+Action.swift */,
 				93CE21B11E563926003D4137 /* PCLBlurEffectAlert+Controller.swift */,
+				93905ED51E630FC500A483CD /* PCLBlurEffectAlert+TransitionAnimator.swift */,
 				93CE21AF1E563926003D4137 /* PCLBlurEffectAlert.h */,
 				93CE21B41E563938003D4137 /* PCLBlurEffectAlert.swift */,
 			);
@@ -95,6 +98,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					OBJ_17 = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "PCLBlurEffectAlert" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -120,6 +128,7 @@
 			files = (
 				93CE21B21E563926003D4137 /* PCLBlurEffectAlert+Action.swift in Sources */,
 				93CE21B31E563926003D4137 /* PCLBlurEffectAlert+Controller.swift in Sources */,
+				93905ED61E630FC500A483CD /* PCLBlurEffectAlert+TransitionAnimator.swift in Sources */,
 				93CE21B51E563938003D4137 /* PCLBlurEffectAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +139,8 @@
 		OBJ_19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -143,6 +154,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PCLBlurEffectAlert;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGET_NAME = PCLBlurEffectAlert;
 			};
 			name = Debug;
@@ -150,6 +163,8 @@
 		OBJ_20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -163,6 +178,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PCLBlurEffectAlert;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 3.0;
 				TARGET_NAME = PCLBlurEffectAlert;
 			};
 			name = Release;
