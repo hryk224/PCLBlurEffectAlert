@@ -14,6 +14,7 @@
 		935BD7421CE272F400E5FDF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935BD7401CE272F400E5FDF7 /* LaunchScreen.storyboard */; };
 		ED413F421D8AA81B0024036E /* PCLBlurEffectAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED413F411D8AA8130024036E /* PCLBlurEffectAlert.framework */; };
 		ED413F431D8AA81B0024036E /* PCLBlurEffectAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED413F411D8AA8130024036E /* PCLBlurEffectAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED6872461E63C12900B8A0B4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6872451E63C12900B8A0B4 /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		935BD7411CE272F400E5FDF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		935BD7431CE272F400E5FDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED413F3C1D8AA8130024036E /* PCLBlurEffectAlert.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PCLBlurEffectAlert.xcodeproj; path = ../PCLBlurEffectAlert.xcodeproj; sourceTree = "<group>"; };
+		ED6872451E63C12900B8A0B4 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				935BD7371CE272F400E5FDF7 /* AppDelegate.swift */,
+				ED6872451E63C12900B8A0B4 /* Assets.swift */,
 				935BD73E1CE272F400E5FDF7 /* Assets.xcassets */,
 				935BD7431CE272F400E5FDF7 /* Info.plist */,
 				935BD7401CE272F400E5FDF7 /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				935BD7381CE272F400E5FDF7 /* AppDelegate.swift in Sources */,
+				ED6872461E63C12900B8A0B4 /* Assets.swift in Sources */,
 				935BD73A1CE272F400E5FDF7 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

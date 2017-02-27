@@ -16,11 +16,12 @@ extension PCLBlurEffectAlert {
         fileprivate var isNeedlayout = true
         fileprivate var message: String?
         fileprivate var textField: UITextField?
+        fileprivate var imageView: UIImageView?
         var style: PCLBlurEffectAlert.ControllerStyle = .actionSheet
         fileprivate var effect: UIBlurEffect = UIBlurEffect(style: .extraLight)
         
         // Actions
-        fileprivate var actions: [PCLBlurEffectAlertAction] = []
+        open fileprivate(set) var actions: [PCLBlurEffectAlertAction] = []
         fileprivate var cancelAction: PCLBlurEffectAlertAction?
         fileprivate var cancelActionTag: Int?
         fileprivate var keyboardHeight: CGFloat = 0
@@ -34,6 +35,7 @@ extension PCLBlurEffectAlert {
         fileprivate var isAlertVertical: Bool { return style == .alertVertical }
         fileprivate var hasTitle: Bool { return title?.isEmpty == false }
         fileprivate var hasMessage: Bool { return message?.isEmpty == false }
+        fileprivate var hasImageView: Bool { return imageView != nil }
         fileprivate var hasTextField: Bool { return !textFields.isEmpty }
         
         // OverlayView
@@ -287,11 +289,21 @@ extension PCLBlurEffectAlertController {
         action.visualEffectView?.isUserInteractionEnabled = false
     }
     // Adds UITextFields
-    open func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextField?) -> Void)? = nil) {
+    open func addTextField(with configurationHandler: ((UITextField?) -> Void)? = nil) {
         let textField = UITextField()
         textField.backgroundColor = .clear
         configurationHandler?(textField)
         textFields.append(textField)
+    }
+    // Adds UITextFields
+    open func addImageView(with image: UIImage, configurationHandler: ((UIImageView?) -> Void)? = nil) {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .clear
+        imageView.image = image
+        configurationHandler?(imageView)
+        self.imageView = imageView
     }
     // show
     open func show() {
@@ -608,8 +620,22 @@ private extension PCLBlurEffectAlertController {
             textAreaView.addSubview(messageLabel)
             textAreaPositionY += messageLabel.frame.height
         }
-        if hasTextField {
+        if let imageView = imageView, let image = imageView.image { // hasImageView
             if hasTitle || hasMessage {
+                textAreaPositionY += margin
+            }
+            let width = min(alertViewWidth - (margin * 2), image.size.width)
+            let height = (width / image.size.width) * image.size.height
+            let size = CGSize(width: width, height: height)
+            imageView.frame = CGRect(x: (alertViewWidth - size.width) / 2,
+                                     y: textAreaPositionY,
+                                     width: size.width,
+                                     height: size.height)
+            textAreaView.addSubview(imageView)
+            textAreaPositionY += imageView.frame.height
+        }
+        if hasTextField {
+            if hasTitle || hasMessage || hasImageView {
                 textAreaPositionY += margin
             }
             let textFieldsView = UIView()
@@ -646,7 +672,7 @@ private extension PCLBlurEffectAlertController {
             textFieldsView.frame.size.height = textFieldsViewHeight
             textAreaPositionY += textFieldsView.frame.size.height
         }
-        if hasTitle || hasMessage || hasTextField {
+        if hasTitle || hasMessage || hasImageView || hasTextField {
             textAreaPositionY += (margin * 2)
             textAreaBackgroundView.backgroundColor = backgroundColor
         } else {
@@ -660,7 +686,7 @@ private extension PCLBlurEffectAlertController {
         var alertViewHeight: CGFloat = 0
         // button setUp
         switch style {
-        case .alert where actions.count == 2 && (hasTitle || hasMessage || hasTextField):
+        case .alert where actions.count == 2 && (hasTitle || hasMessage || hasImageView || hasTextField):
             cornerViewHeight += thin
             actions.enumerated().forEach { index, action in
                 let rect = CGRect(x: CGFloat(index) * alertViewWidth / 2,

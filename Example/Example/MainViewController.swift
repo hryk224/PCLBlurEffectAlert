@@ -17,7 +17,8 @@ final class MainViewController: UIViewController {
         case buttonOnly
         case colorful
         case textField
-        static var count: Int { return 6 }
+        case image
+        static var count: Int { return 7 }
         var description: String {
             switch self {
             case .oneButton: return "One button"
@@ -26,6 +27,7 @@ final class MainViewController: UIViewController {
             case .buttonOnly: return "Button only"
             case .colorful: return "Colorful"
             case .textField: return "Has textFiled"
+            case .image: return "Has image"
             }
         }
     }
@@ -67,8 +69,6 @@ final class MainViewController: UIViewController {
             textField2?.addTarget(self, action: #selector(MainViewController.textFieldEditingChanged(_:)), for: UIControlEvents.editingChanged)
         }
     }
-    fileprivate var action1: PCLBlurEffectAlertAction?
-    fileprivate var action2: PCLBlurEffectAlertAction?
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -192,10 +192,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                                                                message: "message message message message message",
                                                                effect: effect,
                                                                style: style)
-            alertController.addTextFieldWithConfigurationHandler { textField in
+            alertController.addTextField { textField in
                 self.textField1 = textField
             }
-            alertController.addTextFieldWithConfigurationHandler { textField in
+            alertController.addTextField { textField in
                 self.textField2 = textField
             }
             alertController.configure(textFieldsViewBackgroundColor: UIColor.white.withAlphaComponent(0.1))
@@ -211,12 +211,32 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 print("You pressed Cancel")
             }
             action1.isEnabled = false
-            self.action1 = action1
             action2.isEnabled = false
-            self.action2 = action2
             alertController.addAction(action1)
             alertController.addAction(action2)
             alertController.addAction(cancelAction)
+            alertController.show()
+        case .image:
+            let alertController = PCLBlurEffectAlertController(title: "title title title title title title title",
+                                                               message: "message message message message message",
+                                                               effect: effect,
+                                                               style: style)
+            alertController.addImageView(with: Assets.image.sample2)
+            switch effectStyle {
+            case .c:
+                alertController.configure(titleColor: .white)
+                alertController.configure(messageColor: .white)
+            default:
+                break
+            }
+            let catAction = PCLBlurEffectAlertAction(title: "Cat?", style: .default) { _ in
+                print("You pressed Cat?")
+            }
+            let dogAction = PCLBlurEffectAlertAction(title: "Dog?", style: .default) { _ in
+                print("You pressed Dog?")
+            }
+            alertController.addAction(catAction)
+            alertController.addAction(dogAction)
             alertController.show()
         }
     }
@@ -225,8 +245,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - UITextFieldDelegate
 extension MainViewController {
     func textFieldEditingChanged(_ textField: UITextField) {
-        let isEnabled = textField1?.text?.isEmpty == false && textField2?.text?.isEmpty == false
-        action1?.isEnabled = isEnabled
-        action2?.isEnabled = isEnabled
+        guard let alertController = presentedViewController as? PCLBlurEffectAlertController else {
+            return
+        }
+        alertController.actions.filter { $0.style != .cancel }.forEach {
+            $0.isEnabled = textField1?.text?.isEmpty == false && textField2?.text?.isEmpty == false
+        }
     }
 }

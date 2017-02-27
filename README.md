@@ -9,6 +9,8 @@ Swift AlertController, use UIVisualeffectview
 
 <img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample3.gif" width="320" > <img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample4.gif" width="320" >
 
+<img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample5.gif" width="320" >
+
 ## Requirements
 - iOS 8.0+
 - Swift 3.0+
@@ -19,6 +21,7 @@ Swift AlertController, use UIVisualeffectview
 - [x] Change effect
 - [x] Change font
 - [x] Use UITextField
+- [x] Use UIImageView
 
 ## install
 
@@ -35,6 +38,63 @@ pod "PCLBlurEffectAlert"
 
 ```Swift
 import PCLBlurEffectAlert
+```
+
+## Initialize
+
+#### UIBlurEffect
+
+```Swift
+// Default effect: UIBlurEffect(style: .extraLight)
+convenience init(title: String?, message: String?, effect: UIBlurEffect, style: PCLBlurEffectAlert.ControllerStyle)
+```
+
+`style` => `alert`, `alertVertical`, `actionSheet`
+
+When `actions` count becomes more than 3, `alert` and `alertVertical` is the same as.
+
+## Usage
+
+#### Example
+
+```Swift
+let alertController = PCLBlurEffectAlertController(title: "How are you doing?", 
+                                                  message: "Press a button!",
+                                                  effect: UIBlurEffect(style: .lightdark)
+                                                  style: .alert)'
+// Customize if needed
+alertController.configure(titleColor: .white)
+alertController.configure(buttonFont: [.default: UIFont.systemFont(ofSize: 24),
+                                       .destructive: UIFont.boldSystemFont(ofSize: 20),
+                                       .cancel: UIFont.systemFont(ofSize: 14)])
+
+// Adds ImageView
+alertController.addImageView(with: <image files>)
+
+// Adds TextField
+alertController.addTextField()
+
+// Adds actions
+let action = PCLBlurEffectAlertAction(title: "I’m fine.", style: .default) { _ in }
+let cancelAction = PCLBlurEffectAlertAction(title: "Not so good.", style: .cancel) { _ in }
+alertController.addAction(action)
+alertController.addAction(cancelAction)
+
+// Presented
+alertController.show() // or present(alertController, animated: true, completion: nil)
+```
+
+#### Sources
+
+```Swift
+// Adds Actions
+open func addAction(_ action: PCLBlurEffectAlertAction)
+// Adds TextFields
+open func addTextField(with configurationHandler: ((UITextField?) -> Void)? = nil)
+// Adds TextFields
+open func addImageView(with image: UIImage, configurationHandler: ((UIImageView?) -> Void)? = nil)
+// Presented
+open func show()
 ```
 
 ## Customize
@@ -80,7 +140,12 @@ func configure(buttonTextColor: [PCLBlurEffectAlert.ActionStyle : UIColor])
 // .destructive: .gray
 func configure(buttonDisableTextColor: [PCLBlurEffectAlert.ActionStyle : UIColor])
 
-/// TextField
+/// Button
+// Default: 44
+func configure(buttonHeight: CGFloat)
+// Default: .clear
+func configure(buttonBackgroundColor: UIColor)
+
 // Default: 32
 func configure(textFieldHeight: CGFloat)
 // Default: UIColor.white.withAlphaComponent(0.1)
@@ -88,15 +153,9 @@ func configure(textFieldsViewBackgroundColor: UIColor)
 // Default: UIColor.black.withAlphaComponent(0.15)
 func configure(textFieldBorderColor: UIColor)
 
-/// Button
-// Default: 44
-func configure(buttonHeight: CGFloat)
-// Default: .clear
-func configure(buttonBackgroundColor: UIColor)
-
 ```
 
-## Usage
+## More Examples
 
 ```Swift
 let alertController = PCLBlurEffectAlertController(title: "How are you doing?", 
@@ -114,10 +173,10 @@ alertController.show()
 ```Swift
 let alertController = PCLBlurEffectAlertController(title: "title title title title title title title",
                                                   message: "message message message message message",
-                                                  effect: UIBlurEffect(style: .lightdark),
+                                                  effect: UIBlurEffect(style: .light),
                                                   style: .alert)
-alertController.addTextFieldWithConfigurationHandler { _ in }
-alertController.addTextFieldWithConfigurationHandler { _ in }
+alertController.addTextField { _ in }
+alertController.addTextField { _ in }
 alertController.configure(textFieldsViewBackgroundColor: UIColor.white.withAlphaComponent(0.1))
 alertController.configure(textFieldBorderColor: .black)
 alertController.configure(buttonDisableTextColor: [.default: .lightGray, .destructive: .lightGray])
@@ -135,7 +194,7 @@ alertController.show()
 ```Swift
 let alertController = PCLBlurEffectAlertController(title: "How are you doing?", 
                                                   message: "Press a button!",
-                                                  effect: UIBlurEffect(style: .lightdark),
+                                                  effect: UIBlurEffect(style: .dark),
                                                   style: .actionSheet)
 let action1 = PCLBlurEffectAlertAction(title: "I’m fine.", style: .default) { _ in }
 let action2 = PCLBlurEffectAlertAction(title: "Not so good.", style: .default) { _ in }
@@ -150,8 +209,8 @@ alertController.show()
 let alertController = PCLBlurEffectAlertController(title: "title title title title title title title",
                                                   message: "message message message message message",
                                                   style: .actionSheet)
-alertController.addTextFieldWithConfigurationHandler()
-alertController.addTextFieldWithConfigurationHandler()
+alertController.addTextField()
+alertController.addTextField()
 alertController.configure(textFieldsViewBackgroundColor: UIColor.white.withAlphaComponent(0.1))
 alertController.configure(textFieldBorderColor: .black)
 alertController.configure(buttonDisableTextColor: [.default: .lightGray, .destructive: .lightGray])
@@ -166,10 +225,28 @@ alertController.show()
 
 <img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample4.png" width="320" >
 
+```Swift
+let alertController = PCLBlurEffectAlertController(title: "title title title title title title title",
+                                                    message: "message message message message message",
+                                                    style: .alert)
+alertController.addImageView(with: UIImage(named: "cat")!)
+let catAction = PCLBlurEffectAlertAction(title: "Cat?", style: .default) { _ in
+    print("You pressed Cat?")
+}
+let dogAction = PCLBlurEffectAlertAction(title: "Dog?", style: .default) { _ in
+    print("You pressed Dog?")
+}
+alertController.addAction(catAction)
+alertController.addAction(dogAction)
+alertController.show()
+```
+
+<img src="https://raw.githubusercontent.com/wiki/hryk224/PCLBlurEffectAlert/images/sample5.png" width="320" >
 
 ## Photos from
 
 * by [pakutaso.com](https://www.pakutaso.com/)
+* by [FLATICON](http://www.flaticon.com/)
 
 ## Acknowledgements
 
