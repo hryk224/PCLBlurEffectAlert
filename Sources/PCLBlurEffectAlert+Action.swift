@@ -14,7 +14,7 @@ extension PCLBlurEffectAlert {
     open class Action {
         var tag: Int = -1
         var title: String?
-        var style: PCLBlurEffectAlert.ActionStyle
+        open var style: PCLBlurEffectAlert.ActionStyle
         var handler: ((PCLBlurEffectAlert.Action?) -> Void)?
         var button: UIButton!
         var visualEffectView: UIVisualEffectView?
