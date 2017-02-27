@@ -89,10 +89,10 @@ alertController.show() // or present(alertController, animated: true, completion
 ```Swift
 // Adds Actions
 open func addAction(_ action: PCLBlurEffectAlertAction)
+// Adds ImageView
+open func addImageView(with image: UIImage, configurationHandler: ((UIImageView?) -> Void)? = nil)
 // Adds TextFields
 open func addTextField(with configurationHandler: ((UITextField?) -> Void)? = nil)
-// Adds TextFields
-open func addImageView(with image: UIImage, configurationHandler: ((UIImageView?) -> Void)? = nil)
 // Presented
 open func show()
 ```

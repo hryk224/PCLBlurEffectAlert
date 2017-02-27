@@ -288,14 +288,14 @@ extension PCLBlurEffectAlertController {
         action.visualEffectView = UIVisualEffectView(effect: effect) as UIVisualEffectView
         action.visualEffectView?.isUserInteractionEnabled = false
     }
-    // Adds UITextFields
+    // Adds TextFields
     open func addTextField(with configurationHandler: ((UITextField?) -> Void)? = nil) {
         let textField = UITextField()
         textField.backgroundColor = .clear
         configurationHandler?(textField)
         textFields.append(textField)
     }
-    // Adds UITextFields
+    // Adds ImageView
     open func addImageView(with image: UIImage, configurationHandler: ((UIImageView?) -> Void)? = nil) {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
