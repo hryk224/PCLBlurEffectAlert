@@ -100,6 +100,10 @@ extension PCLBlurEffectAlert {
             return view.tintColor
         }
         
+        open override var prefersStatusBarHidden: Bool {
+            return presentingViewController?.prefersStatusBarHidden ?? super.prefersStatusBarHidden
+        }
+        
         public convenience init(title: String?,
                                 message: String?,
                                 effect: UIBlurEffect = UIBlurEffect(style: .extraLight),

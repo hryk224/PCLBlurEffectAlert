@@ -12,7 +12,6 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -78,23 +77,24 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5El-06-33n" secondAttribute="bottom" id="Yah-Qo-HTT"/>
                             <constraint firstAttribute="trailing" secondItem="Ho7-a3-lkY" secondAttribute="trailing" constant="8" id="adQ-XY-qwK"/>
                             <constraint firstAttribute="trailing" secondItem="b8G-F1-453" secondAttribute="trailing" constant="8" id="eZU-IT-mBu"/>
-                            <constraint firstItem="VK3-wA-HIw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gEd-gO-DMb"/>
                             <constraint firstItem="Ho7-a3-lkY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="h3c-Yk-iRZ"/>
                             <constraint firstItem="b8G-F1-453" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="17" id="jKO-uh-ti6"/>
+                            <constraint firstItem="VK3-wA-HIw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jqD-42-hCv"/>
                             <constraint firstItem="5El-06-33n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="khc-A2-bXb"/>
                             <constraint firstItem="5El-06-33n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="mwa-Xh-Ruq"/>
                             <constraint firstAttribute="trailing" secondItem="5El-06-33n" secondAttribute="trailing" id="oXC-Wb-SHt"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <navigationItem key="navigationItem" id="9n1-jh-5Ja"/>
                     <connections>
                         <outlet property="blurEffecrSegmentedControl" destination="Ho7-a3-lkY" id="meq-sq-lcd"/>
                         <outlet property="styleSegmentedControl" destination="b8G-F1-453" id="31G-Cx-7fe"/>
                         <outlet property="tableView" destination="5El-06-33n" id="DUc-Mx-Idw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="47"/>
+            <point key="canvasLocation" x="-1346" y="75"/>
         </scene>
     </scenes>
     <resources>
