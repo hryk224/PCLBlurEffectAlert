@@ -252,6 +252,6 @@ alertController.show()
 
 * Inspired by [DOAlertController](https://github.com/okmr-d/DOAlertController) in [okmr-d](https://github.com/okmr-d).
 
-##License
+## License
 
 This project is made available under the MIT license. See LICENSE file for details.
