@@ -815,7 +815,7 @@ private extension PCLBlurEffectAlertController {
         alertViewHeightConstraint.constant = alertViewHeight
         view.layoutIfNeeded()
     }
-    dynamic func buttonWasTouchUpInside(_ sender: UIButton) {
+    @objc dynamic func buttonWasTouchUpInside(_ sender: UIButton) {
         sender.isSelected = true
         let action = actions[sender.tag]
         dismiss(animated: true) {
